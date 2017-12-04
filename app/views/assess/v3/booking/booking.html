@@ -1,0 +1,175 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("booking",1,path1) }}
+
+  <div class="grid-row mt30">
+
+    <div class="column-third">
+    
+
+		<div class="app-info">
+	          <h3 class="heading-small">Assessment centre</h3>
+	          <p>Tresco house</p>
+	         <!-- <p><a href="#">Change</a></p> -->
+	    </div>  
+	    
+	    <div class="app-info">
+	          <h3 class="heading-small">Skill required</h3>
+	          <p>Complex neuro</p>
+	         <!-- <p><a href="#">Change</a></p> -->
+	    </div> 
+	    
+	   <!-- <div class="app-info">
+	          <h3 class="heading-small">Special requirements</h3>
+	          <p>Wednesday and Thursday only</p>
+			  <p>Afternoon appointment only</p>
+			  <p>1st floor access</p>
+	    </div>  -->       
+	  
+
+    </div><!-- column -->
+    
+    
+    
+    <div class="column-third">
+    
+    
+    
+    
+        
+    <form>
+    <fieldset>
+    
+    	<legend class="visually-hidden">Booking information</legend>
+    	
+    	
+    	
+    	<div class="form-group">
+
+			    <fieldset>
+			
+			      <legend class="heading-medium">Preferred appointment day</legend>
+			
+			      <div class="multiple-choice"> 
+			        <input id="radio-1a" type="checkbox" name="radio-group2" value="Mon">
+			        <label for="radio-1a">Monday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-2a" type="checkbox" name="radio-group2" value="Tue">
+			        <label for="radio-2a">Tuesday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-3a" type="checkbox" name="radio-group2" value="Wed">
+			        <label for="radio-3a">Wednesday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-4a" type="checkbox" name="radio-group2" value="Thu">
+			        <label for="radio-4a">Thursday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-5a" type="checkbox" name="radio-group2" value="Fri">
+			        <label for="radio-5a">Friday</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+    	
+
+    	
+    	
+    	
+    	
+    	
+
+    	
+
+		  <div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Preferred appointment time</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-1" type="checkbox" name="radio-group" value="Northern Ireland">
+			        <label for="radio-1">9am - 12pm</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-2" type="checkbox" name="radio-group" value="Isle of Man or the Channel Islands">
+			        <label for="radio-2">12pm - 3pm</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-3" type="checkbox" name="radio-group" value="I am a British citizen living abroad">
+			        <label for="radio-3">3pm - 6pm</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+		  
+		  
+		<div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Special requirements</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-1b" type="checkbox" name="radio-group3" value="1st">
+			        <label for="radio-1b">1st floor access</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-2b" type="checkbox" name="radio-group3" value="Other">
+			        <label for="radio-2b">Interpreter required</label>
+			      </div>
+			      <!-- <div class="multiple-choice">
+			        <input id="radio-3b" type="checkbox" name="radio-group3" value="None">
+			        <label for="radio-3b">Male HCP</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-4b" type="checkbox" name="radio-group3" value="None">
+			        <label for="radio-4b">Female HCP</label>
+			      </div> -->
+			      <div class="multiple-choice">
+			        <input id="radio-5b" type="checkbox" name="radio-group3" value="None">
+			        <label for="radio-5b">Welsh speaker</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+		  
+		  
+		  <div class="form-group mt20">
+		  	<a href="/assess/v2/booking/datepicker" class="button">View available dates</a>
+		  </div>
+		  
+		    	
+    	
+    	
+	
+    </fieldset>
+    
+    
+    </form>
+    
+    </div>
+    
+    
+    <div class="column-third">
+      
+    </div>
+    
+    
+    
+    
+   
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

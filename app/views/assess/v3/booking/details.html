@@ -1,0 +1,83 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("details",1,path1) }}
+
+  <div class="grid-row mt30">
+  
+  
+  <div class="column-third">
+  
+     
+    <h3 class="heading-medium mt0">Contact details</h3>
+    <h4 class="heading-small">Phone</h4>
+    <p>0151 924 2080</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>the.bobby.hendo@madeup.com</p>
+    
+    <h4 class="heading-small">Postal address</h4>
+    <p class="address-stack">
+    	<span>27 Redhill Lane</span>
+    	<span>Ainsdale</span>
+    	<span>London</span>
+    	<span>Merseyside</span>
+    	<span>PR8 9UE</span>
+    </p>
+
+       
+    
+    </div><!-- column -->
+    
+    <div class="column-third">
+  
+     
+    <h3 class="heading-medium mt0">Appointment history</h3>
+    <h4 class="heading-small">12th July 2016</h4>
+    <p>Sent home unseen</p>
+    
+    <h4 class="heading-small">9th May 2015</h4>
+    <p>Did not attend</p>
+    
+    <h4 class="heading-small">1st December 2014</h4>
+    <p>Arrived late</p>
+    
+    
+    <h4 class="heading-small">Behaviour</h4>
+    <p>Red flag behaviour issue</p>
+    
+    
+    
+    </div><!-- column -->
+
+    
+  
+    
+    <div class="column-third">
+    <h3 class="heading-medium mt0">Notes</h3>
+
+  	  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  	  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+    </div><!-- column -->
+    
+    
+    
+    
+    
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
