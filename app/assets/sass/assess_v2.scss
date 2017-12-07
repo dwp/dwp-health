@@ -294,6 +294,11 @@ td,th {
 				&:hover {
 					border: solid $govuk-blue 5px;
 				}
+				span {
+					display: block;
+					font-size: 16px;
+					margin-left: 0;
+				}
 			}
 		}
 		&.add-slot {
