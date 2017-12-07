@@ -9,7 +9,7 @@
     <ul class="main-nav">
  
         <li class="selected"><a href="#">Appointments</a></li>
-        <li><a href="#">Assessment Centres</a></li> 
+        <li><a href="assessment-centres">Assessment Centres</a></li> 
         <li><a href="#">Health Care Professionals</a></li>
 
     </ul>
@@ -36,10 +36,10 @@
       
         <div class="grid-row">
           <div class="column-full">
-              <table class="zebra booked_dates">
+              <table class="appointments-view booked_dates">
 
                 <thead>
-                  <tr>
+                  <tr class="header-view">
                     <th style="padding-left:15px;">Name</th>
                     <th>Assessment Centre</th>
                     <th>Appointment Date</th>
@@ -48,8 +48,8 @@
                   </tr>
                 </thead>
                 
-                <tr class="click_row" href="booking/bobby">
-                  <td style="padding-left:15px;" class="">Bobby Henderson</td>
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="booking/bobby">Bobby Henderson</a></td>
                   <td>Tresco House</td>
                   <td>4th June 2017</td>
                   <td>14:00pm</td>
@@ -57,7 +57,7 @@
                 </tr> 
                 
 
-                <tr class="click_row" href="#">
+                <tr>
                   <td style="padding-left:15px;" class="">Lucas Sturridge</td>
                   <td>Tresco House</td>
                   <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
@@ -65,7 +65,7 @@
                   <td class="numeric"><span class="status orange">SCHEDULED</span></td>
                 </tr>
                 
-                <tr class="click_row" href="#">
+                <tr>
                   <td style="padding-left:15px;" class="">Ashton Firmino</td>
                   <td>Tresco House</td>
                   <td>4th June 2017</td>
@@ -73,7 +73,7 @@
                   <td class="numeric"><span class="status orange">SCHEDULED</span></td>
                 </tr> 
                 
-                <tr class="click_row" href="#">
+                <tr>
                   <td style="padding-left:15px;" class="">Shelley Johnson</td>
                   <td>Tresco House</td>
                   <td>4th June 2017</td>
@@ -81,7 +81,7 @@
                   <td class="numeric"><span class="status orange">SCHEDULED</span></td>
                 </tr>            
                 
-                <tr class="click_row" href="#">
+                <tr>
                   <td style="padding-left:15px;" class="">Levi Wijnaldum</td>
                   <td>Tresco House</td>
                   <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
@@ -89,7 +89,7 @@
                   <td class="numeric"><span class="status red">DNA</span></td>
                 </tr>
                 
-                <tr class="click_row" href="#">
+                <tr>
                   <td style="padding-left:15px;" class="">Roger Aubameyang</td>
                   <td>Tresco House</td>
                   <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
@@ -97,7 +97,7 @@
                   <td class="numeric"><span class="status red">CSHU - 15:30pm</span></td>
                 </tr>
                 
-                <tr class="click_row" href="#">
+                <tr>
                   <td style="padding-left:15px;" class="">Sam Lallana</td>
                   <td>Tresco House</td>
                   <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
@@ -105,7 +105,7 @@
                   <td class="numeric"><span class="status red">UTA</span></td>
                 </tr>
                 
-                <tr class="click_row" href="#">
+                <tr>
                   <td style="padding-left:15px;" class="">Alberto Lewis</td>
                   <td>Tresco House</td>
                   <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>

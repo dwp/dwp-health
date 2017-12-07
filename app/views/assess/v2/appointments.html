@@ -9,7 +9,7 @@
     <ul class="main-nav">
  
         <li class="selected"><a href="#">Appointments</a></li>
-        <li><a href="#">Assessment Centres</a></li> 
+        <li><a href="assessment-centres">Assessment Centres</a></li> 
         <li><a href="#">Health Care Professionals</a></li>
 
     </ul>
@@ -36,10 +36,10 @@
       
         <div class="grid-row">
           <div class="column-full">
-              <table class="zebra">
+              <table class="appointments-view">
 
                 <thead>
-                  <tr>
+                  <tr class="header-view">
                     <th style="padding-left:15px;">Name</th>
                     <th>NI Number</th>
                     <th>Benefit</th>
@@ -50,8 +50,8 @@
                 </thead>
 
 
-                <tr class="click_row" href="booking/timeline">
-                  <td style="padding-left:15px;" class="">Bobby Henderson</td>
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="booking/timeline">Bobby Henderson</a></td>
                   <td>QQ531235C</td>
                   <td>ESR</td>
                   <td>Complex Nuero </td>
@@ -59,8 +59,8 @@
                   <td class="numeric">New claim</td>
                 </tr>
 
-                <tr class="click_row" href="#">
-                  <td style="padding-left:15px;" class="">Dexter Coutinho</td>
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="#">Dexter Coutinho</a></td>
                   <td>JW000060A</td>
                   <td>IBR</td>
                   <td>Complex Nuero </td>
@@ -68,38 +68,14 @@
                   <td class="numeric">Re-assessment</td>
                 </tr>
                 
-                <tr class="click_row" href="#">
-                  <td style="padding-left:15px;" class="">Isaac Carragher</td>
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="#">Isaac Carragher</a></td>
                   <td>JW000060A</td>
                   <td>UC</td>
                   <td>Complex Nuero</td>
                   <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
                   <td class="numeric">Re-referall</td>
                 </tr>
-                
-              <!--  <tr class="click_row" href="miarussell/timeline">
-                  <td style="padding-left:15px;" class="">Mia Russell</td>
-                  <td>Appointment booked</td>
-                  <td>pseudoxanthoma elasticum </td>
-                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
-                  <td class="nobr numeric">Grégory Faure</td>
-                </tr>
-                
-                <tr class="click_row" href="miarussell/timeline">
-                  <td style="padding-left:15px;" class="">Lucas Sturridge</td>
-                  <td>Appointment booked</td>
-                  <td>pseudoxanthoma elasticum </td>
-                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
-                  <td class="nobr numeric">Grégory Faure</td>
-                </tr>
-                
-                <tr class="click_row" href="miarussell/timeline">
-                  <td style="padding-left:15px;" class="">Ashton Firmino</td>
-                  <td>Appointment booked</td>
-                  <td>pseudoxanthoma elasticum </td>
-                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
-                  <td class="nobr numeric">Grégory Faure</td>
-                </tr> -->
 
                
               </table>
