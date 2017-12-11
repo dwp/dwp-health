@@ -61,7 +61,7 @@
 	   		</a>
    		</li>
    		<li>
-	   		<a href="fiveways-scheduler-room2">
+	   		<a href="#" class="selected">
 		   		Room 2
 		   		
 	   		</a>
@@ -92,7 +92,53 @@
   
     <div class="column-third">
     
-     
+   <h3 class="heading-medium mt0">Actions</h3>
+
+   	<form class="mt30">
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">
+        <h1 class="heading-medium">Actions</h1>
+      </legend>
+
+      <div class="multiple-choice">
+        <input id="radio-1" type="radio" name="action-group" value="remove">
+        <label for="radio-1">Make room unavailable</label>
+      </div>
+      <div class="multiple-choice" data-target="add-req">
+        <input id="radio-2" type="radio" name="action-group" value="add">
+        <label for="radio-2">Facilities</label>
+      </div>
+      <div class="js-hidden panel" id="add-req">
+      
+    		<fieldset>
+			
+			      <legend class="visually-hidden">Special requirements</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-1b" type="checkbox" name="radio-group3" value="1st" class="access-floor">
+			        <label for="radio-1b">Ground floor access</label>
+			      </div>
+			      
+			      <div class="multiple-choice">
+			        <input id="security" type="checkbox" name="radio-group3" value="Security" class="security-req">
+			        <label for="security">Security available</label>
+			      </div>
+
+			
+			    </fieldset>
+    	
+    </div>
+
+
+    </fieldset>
+  </div>
+  <div class="form-group">
+  	<p><a href="publish-room" class="button">Save changes</a></p>
+  </div>
+</form>
+    
     </div><!-- column -->
   
   
