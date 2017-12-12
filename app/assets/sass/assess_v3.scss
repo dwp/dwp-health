@@ -339,14 +339,14 @@ td,th {
 			display: inline-block;
 			text-transform: uppercase;
 			padding: 4px 8px 2px 8px; 
-			border: 1px solid $green;
+			border: 1px solid $govuk-blue;
+			color: $govuk-blue;
 			font-weight: 700;
 			font-size: 16px;
 			position: relative;
 			top: -1px;
-			color: #fff;
+			color: $green;
 			border-color: $green;
-			background: $green;
 		}
 	}
 }
@@ -413,24 +413,20 @@ span.status {
 	position: relative;
 	top: -1px;
 	&.red {
-		color: #fff;
-		background: $mellow-red;
+		color: $mellow-red;
 		border-color: $mellow-red;
 	}
 	&.orange {
-		color: #fff;
-		background: $orange;
+		color: $orange;
 		border-color: $orange;
 	}
 	&.green {
-		color: #fff;
-		background: $green;
+		color: $green;
 		border-color: $green;
 	}
 	&.grey {
-		color: #fff;
+		color: $grey-1;
 		border-color: $grey-1;
-		background: $grey-1;
 	}
 }
 
@@ -565,28 +561,5 @@ span.status {
 	margin-bottom: 0;
 	padding-bottom: 0;
 }
-
-
-.hours {
-	label {
-		position: absolute;
-		left: -9999px;
-	}
-	input {
-		float: left;
-		width: 30%;
-	}
-	p {
-		margin: 0 10px;
-		float: left;
-		width: auto;
-		padding-top: 10px;
-		font-size: 17px;
-	}
-	
-}
-
-
-
 
 
