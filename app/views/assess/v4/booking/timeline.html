@@ -1,4 +1,4 @@
-{% extends path1+"/_layout.html" %}
+{% extends path1+"/_layout-owned.html" %}
 
 {% block citizen_content %}
 
@@ -12,28 +12,44 @@
     <div class="column-two-thirds">
       <div class="timeline">
 
+		  
+		 <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment booking</h3>
+          <p class="timeline_datetime">18th June 2017</p>
+        </div> 
 
-
+       
         <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">referral to appointment booking</h3>
-          <p class="timeline_datetime">14:37pm - 8th June 2017</p>
-          <p class="bold-small"><a href="#">Dejan Swann</a></p>
+          <h3 class="timeline__heading">ESA50 received at CHDA</h3>
+          <p class="timeline_datetime">16th June 2017</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">questionnaire received</h3>
-          <p class="timeline_datetime">10:00am - 5th June 2017</p>
-          <p class="bold-small"><a href="#">Emre Edward</a></p>
+          <h3 class="timeline__heading">ESA50 sent out to Tomas</h3>
+          <p class="timeline_datetime">5th June 2017</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">Application submitted</h3>
-          <p class="timeline_datetime">09:12am - 1st June 2017</p>
-          <p class="bold-small"><a href="#">Chris Gerrard</a></p>
+          <h3 class="timeline__heading">Sick note received </h3>
+          <p class="timeline_datetime">20th May 2017</p>
         </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">8th May 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">1st May 2017</p>
+        </div>
+
 
         <div style="clear:both"></div>
 
@@ -42,9 +58,44 @@
     </div><!-- column -->
 
     <div class="column-one-third">
-      {# {% include path+"/inc/edit/status.html" %}
-      {% include path+"/inc/edit/adviser.html" %}
-      {% include path+"/inc/edit/team.html" %} #}
+     
+ 	 	   <div class="case-status">
+		 
+
+		  <p class="mt10 mb0 bold-small"><span class="circle orange"></span>Pending</p>
+		  <p class="mt10">Assigned to Donald Robinson</p>
+		  <hr>
+		 
+	  </div> 
+	  
+	  <h3 class="heading-medium mt30">Next available appointment</h3>
+ 
+  
+  <div class="info-panel available-slot">
+  	<div class="column-half" style="padding: 0;">
+	   	<h4 class="heading-small">Thursday 4th January</h4>
+	   	<p>14:00pm</p>
+  	</div>
+   	<div class="column-half" style="padding: 0; text-align: right;">
+   		<a href="timeline2" class="button">Book</a>
+   	</div>
+  </div>
+
+	  
+	  <hr>
+	  
+	  
+	  
+	  
+	  <h3 class="heading-medium mt0">Requirements</h3>
+		  <ul class="filter-list">
+	     	<li>Ground floor access</li>
+	     	<li>Male health assessor preferred</li>
+	     </ul>
+	     
+	     <hr>
+     
+     
     </div><!-- column -->
 
   </div><!-- row -->

@@ -156,8 +156,68 @@ $("input[type='checkbox']").on("change",function(){
 
 
 
+  
+// Own functionality
 
+$(document).ready(function() {
+  
+  $("tr").each(function() {
+    var $name = $(this).find('.col-heading').text();
+    $(this).before( "<tr class='done' style='display:none'><td colspan='6'>" + $name + " added to &lsquo;my referrals&rsquo;&nbsp;&nbsp;<a href='#' class='undo'>Undo</a></td></tr>" );
+  });
+  
+  var $ownButtons = $(".add a");
+  var $undoButtons = $(".undo");
 
+  $ownButtons.click(function() {
+
+    var $row = $(this).parent().parent();
+    var $rowBefore = $row.prev();
+    var $name = $(this).parent().parent().find('.col-heading').text();
+
+    $rowBefore.css('display', 'table-row');
+    $row.css('display', 'none');
+
+    // Updates totals
+
+    $availableTotal = parseInt($("#available-refs-total").text()) - 1;
+    $("#available-refs-total").html($availableTotal);
+
+    $teamTotal = parseInt($("#team-refs-total").text()) + 1;
+    $("#team-refs-total").html($teamTotal);
+
+    $myTotal = parseInt($("#my-refs-total").text()) + 1;
+    $("#my-refs-total").html($myTotal);
+
+    return false;
+
+  });
+
+  $undoButtons.click(function() {
+
+    var $row = $(this).parent().parent();
+    var $rowAfter = $row.next();
+    var $name = $(this).parent().parent().find('.col-heading').text();
+
+    $rowAfter.css('display', 'table-row');
+    $row.css('display', 'none');
+
+    // Updates totals
+
+    $availableTotal = parseInt($("#available-refs-total").text()) + 1;
+    $("#available-refs-total").html($availableTotal);
+
+    $teamTotal = parseInt($("#team-refs-total").text()) - 1;
+    $("#team-refs-total").html($teamTotal);
+
+    $myTotal = parseInt($("#my-refs-total").text()) - 1;
+    $("#my-refs-total").html($myTotal);
+
+    return false;
+
+  });
+
+});
 
 
 
