@@ -226,6 +226,7 @@ if (typeof (routes) !== 'function') {
   app.use('/assess/v1/', require('./app/views/assess/v1/_routes.js'))
   app.use('/assess/v2/', require('./app/views/assess/v2/_routes.js'))
   app.use('/assess/v3/', require('./app/views/assess/v3/_routes.js')) 
+  app.use('/assess/v3-1/', require('./app/views/assess/v3-1/_routes.js'))
   app.use('/assess/v4/', require('./app/views/assess/v4/_routes.js')) 
   app.use('/assess/v5/', require('./app/views/assess/v5/_routes.js'))    
   app.use('/vouch/', require('./app/views/vouch/_routes.js'))
