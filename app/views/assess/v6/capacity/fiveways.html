@@ -1,0 +1,43 @@
+{% extends path1+"/_addlayout.html" %} {% block citizen_content %}
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-one-third">
+            <h3 class="heading-medium mt0">Appointment Slots</h3>
+            <ul>
+                <li>Monday - 7 slots</li>
+                <li>Tuesday - 7 slots</li>
+                <li>Wednesday - 7 slots</li>
+                <li>Thursday - 7 slots</li>
+                <li>Friday - 7 slots</li>
+                <li>Saturday - 3 slots</li>
+            </ul>
+            <p><a href="manage-slots" class="button">Manage Slots</a></p>
+        </div>
+        <div class="column-one-third">
+            <h3 class="heading-medium mt0">Health Care Professionals<h3>
+            <ul>
+                <li>6 Total</li>
+                <li>4 Doctors</li>
+                <li>2 Nursers</li>
+                <li>5 Complex Neuro</li>
+            </ul>
+            <p><a href="manage-staff" class="button">Manage Staff</a></p>
+        </div>
+        <div class="column-one-third">
+            <h3 class="heading-medium mt0">Rooms<h3>
+            <ul>
+                <li>Room 1</li>
+                <li>Room 2</li>
+                <li>Room 3</li>
+                <li>Room 4</li>
+                <li>Room 5</li>
+                <li>Room 6</li>
+            </ul>
+            <p><a href="#" class="button">Manage Rooms</a></p>
+        </div>
+        <!-- column -->
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

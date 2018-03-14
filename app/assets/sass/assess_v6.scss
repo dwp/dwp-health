@@ -5,7 +5,7 @@ $path: "/public/images/";
 // Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
 @import 'govuk-elements';
-
+$site-width: 1300px;
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "admin";
 @import "inc/timeline";
@@ -24,6 +24,10 @@ $path: "/public/images/";
 @import "inc/evidence";
 @import "inc/nav";
 @import "inc/alt-buttons";
+@import "inc/grey-list";
+
+
+
 
 #global-header.with-proposition .header-wrapper .header-global {
   width: 17%;
@@ -56,6 +60,11 @@ td,th {
   padding: 20px 40px 0;
   color: white;
   margin-bottom: 20px;
+}
+
+.staff__centred {
+	max-width: $site-width;
+	margin: 0 auto;
 }
 
 .list .date {
@@ -347,6 +356,39 @@ td,th {
 			color: #fff;
 			border-color: $green;
 			background: $green;
+		}
+	}
+}
+
+.time-slot{
+
+	&__heading{
+		font-weight: 700;
+	}
+
+
+
+	&__list {
+		background: white;
+		display: flex;
+		justify-content: space-between;
+		padding: 5px;
+
+		&--full {
+			border-left:5px solid $red;
+		}
+
+		&--available {
+			border-left: 5px solid $green;
+		}
+
+		span, h4 {
+			flex-grow: 1;
+			flex-basis: 0;
+		}
+
+		span:last-child {
+			text-align: right;
 		}
 	}
 }
@@ -766,26 +808,10 @@ a {
 }
 
 
-.status{
-	display: block;
-	padding: 5px 0 3px 1rem;
-	border-left: 5px solid transparent;
-
-
-	&--green {
-		border-left-color: $green;
-		background: white;
-	}
-	&--red {
-		border-left-color: $red;
-		background: white;
-	}
-
-	&__number {
-		font-weight: bold;
-	}
 
 	
 
-
+.time-input {
+	width: 5em;
 }
+

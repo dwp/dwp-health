@@ -3,7 +3,8 @@
   overflow: hidden;
 
   .main-nav-wrapper{
-    width: 100%;
+    max-width: $site-width;
+    margin: 0 auto;
 
     ul {
       padding-left: 40px;

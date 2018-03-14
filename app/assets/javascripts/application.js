@@ -220,7 +220,12 @@ $(document).ready(function() {
 });
 
 
-
+$(document).ready(function(){
+    $("[data-toggle-content]").click(function(event){
+        var element = $(this).data("toggleContent");
+        $("#" + element).toggleClass("hidden");
+    });
+});
 
 
 
