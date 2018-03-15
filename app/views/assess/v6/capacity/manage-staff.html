@@ -12,6 +12,7 @@ set staff = [
     "gender": "male",
     "type": "Doctor",
     "href": "Salazar",
+    "skill": "Complex neuro",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
@@ -29,6 +30,7 @@ set staff = [
     "name": "Mejia Hopper",
     "gender": "male",
     "type": "Nurse",
+    "skill": "Neuro",
     "href": "#",
     "days": [
         "Monday 9am - 5pm",
@@ -48,6 +50,7 @@ set staff = [
     "gender": "male",
     "type": "Doctor",
     "href": "#",
+    "skill": "Standard",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
@@ -65,6 +68,7 @@ set staff = [
     "name": "Cynthia Carter",
     "gender": "female",
     "type": "Doctor",
+    "skill": "Standard",
     "href": "#",
     "days": [
         "Monday 9am - 5pm",
@@ -83,6 +87,7 @@ set staff = [
     "name": "Rice Cooper",
     "gender": "male",
     "type": "Nurse",
+    "skill": "Standard",
     "href": "#",
     "days": [
         "Monday 9am - 5pm",
@@ -101,6 +106,7 @@ set staff = [
     "name": "Hendrix Woodward",
     "gender": "male",
     "type": "Doctor",
+    "skill": "Neuro",
     "href": "#",
     "days": [
         "Monday 9am - 5pm",
@@ -123,6 +129,7 @@ set staff = [
                     <tr>
                         <th>Name</th>
                         <th>Type</th>
+                        <th>Skill</th>
                         <th>Available Times</th>
                         <th></th>
                     </tr>
@@ -131,6 +138,7 @@ set staff = [
                 <tr>
                     <td>{{ person.name }}</td>
                     <td>{{ person.type }}</td>
+                    <td>{{ person.skill }}</td>
                     <td>
                         {% for day in person.days %}
                             {{day}} {% if not loop.last %}, <br> {% endif %}
@@ -145,6 +153,36 @@ set staff = [
             <p class="mt30"><a href="#" class="button">Add staff</a></p>
         </div>
         <!-- column -->
+        <div class="column-one-third">
+            <div class="info-panel ">
+                <h4>Health Care Professionals</h4>
+                <div class="grid-row">
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">4</span>
+                      <span class="data-item bold-xsmall">Doctors</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">2</span>
+                      <span class="data-item bold-xsmall">Nurses</span>
+                    </div>
+                </div>
+                <h4>Skills</h4>
+                <div class="grid-row">
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">1</span>
+                      <span class="data-item bold-xsmall">Complex Neuro</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">2</span>
+                      <span class="data-item bold-xsmall">Neuro</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">3</span>
+                      <span class="data-item bold-xsmall">Standard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- row -->
 </div>
