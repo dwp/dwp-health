@@ -201,6 +201,7 @@ td,th {
 
 		th, td {
 			text-align: center;
+			width: calc(100% / 7);
 		}
 		td {
 			background: $grey-3;
@@ -232,6 +233,24 @@ td,th {
 	}
 }
 
+
+.available--full {
+	position: relative;
+
+	&:after {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 15px 15px;
+		border-color: transparent transparent $red transparent;
+
+	}
+}
 
 .key {
 	margin-top: 25px;

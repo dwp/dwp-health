@@ -12,6 +12,7 @@ set staff = [
     "gender": "male",
     "type": "Doctor",
     "href": "Salazar",
+    "edithref": "?Salazar",
     "skill": "Complex neuro",
     "days": [
         "Monday 9am - 5pm",
@@ -31,7 +32,8 @@ set staff = [
     "gender": "male",
     "type": "Nurse",
     "skill": "Neuro",
-    "href": "#",
+    "href": "?Mejia",
+    "edithref": "?Mejia",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
@@ -48,8 +50,9 @@ set staff = [
     "firstname": "Page",
     "name": "Page Cortez",
     "gender": "male",
-    "type": "Doctor",
-    "href": "#",
+    "type": "Nurse",
+    "href": "?page",
+    "edithref": "?page",
     "skill": "Standard",
     "days": [
         "Monday 9am - 5pm",
@@ -67,32 +70,14 @@ set staff = [
     "firstname": "Cynthia",
     "name": "Cynthia Carter",
     "gender": "female",
-    "type": "Doctor",
+    "type": "Nurse",
     "skill": "Standard",
-    "href": "#",
+    "href": "cynthia",
+    "edithref": "cynthia",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
         "Wednesday 9am - 5pm",
-        "Friday 9am - 5pm",
-        "Saturday 9am - 1pm"
-    ]
-  },
-  {
-    "id": "5aa7dcc34edb2dc459869859",
-    "index": 4,
-    "guid": "01830e83-b2f3-4b97-8962-2c2107b58a75",
-    "surname": "Cooper",
-    "firstname": "Rice",
-    "name": "Rice Cooper",
-    "gender": "male",
-    "type": "Nurse",
-    "skill": "Standard",
-    "href": "#",
-    "days": [
-        "Monday 9am - 5pm",
-        "Wedensday 9am - 5pm",
-        "Thursday 9am - 5pm",
         "Friday 9am - 5pm",
         "Saturday 9am - 1pm"
     ]
@@ -105,9 +90,10 @@ set staff = [
     "firstname": "Hendrix",
     "name": "Hendrix Woodward",
     "gender": "male",
-    "type": "Doctor",
-    "skill": "Neuro",
-    "href": "#",
+    "type": "Nurse",
+    "skill": "Standard",
+    "href": "?hendrix",
+    "edithref": "hendrix",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
@@ -124,9 +110,9 @@ set staff = [
     "firstname": "Liliana",
     "name": "Liliana Mcleod",
     "gender": "female",
-    "type": "Doctor",
+    "type": "Nurse",
     "href": "#",
-    "skill": "Complex neuro",
+    "skill": "Neuro",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
@@ -156,7 +142,7 @@ set staff = [
                 </thead>
                 {% for person in staff %}
                 <tr>
-                    <td>{{ person.name }}</td>
+                    <td><a href="{{ person.edithref }}">{{ person.name }}</a></td>
                     <td>{{ person.type }}</td>
                     <td>{{ person.skill }}</td>
                     <td>
@@ -165,7 +151,7 @@ set staff = [
                         {% endfor %}
                     </td>
                     <td class="numeric">    
-                        <a href="{{person.href}}">Edit</a>
+                        <a href="{{person.href}}">Edit Hours</a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -178,18 +164,18 @@ set staff = [
                 <h4>Healthcare Professionals</h4>
                 <div class="grid-row">
                     <div class="data column-one-third">
-                      <span class="data-item bold-xlarge">5</span>
-                      <span class="data-item bold-xsmall">Doctors</span>
+                      <span class="data-item bold-xlarge">1</span>
+                      <span class="data-item bold-xsmall">Doctor</span>
                     </div>
                     <div class="data column-one-third">
-                      <span class="data-item bold-xlarge">2</span>
+                      <span class="data-item bold-xlarge">5</span>
                       <span class="data-item bold-xsmall">Nurses</span>
                     </div>
                 </div>
                 <h4>Skills</h4>
                 <div class="grid-row">
                     <div class="data column-one-third">
-                      <span class="data-item bold-xlarge">2</span>
+                      <span class="data-item bold-xlarge">1</span>
                       <span class="data-item bold-xsmall">Complex Neuro</span>
                     </div>
                     <div class="data column-one-third">
