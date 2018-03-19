@@ -12,6 +12,7 @@ set staff = [
     "gender": "male",
     "type": "Doctor",
     "href": "Salazar",
+    "edithref": "?Salazar",
     "skill": "Complex neuro",
     "days": [
         "Monday 9am - 5pm",
@@ -31,7 +32,8 @@ set staff = [
     "gender": "male",
     "type": "Nurse",
     "skill": "Neuro",
-    "href": "#",
+    "href": "?Mejia",
+    "edithref": "?Mejia",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
@@ -48,8 +50,9 @@ set staff = [
     "firstname": "Page",
     "name": "Page Cortez",
     "gender": "male",
-    "type": "Doctor",
-    "href": "#",
+    "type": "Nurse",
+    "href": "?page",
+    "edithref": "?page",
     "skill": "Standard",
     "days": [
         "Monday 9am - 5pm",
@@ -67,9 +70,10 @@ set staff = [
     "firstname": "Cynthia",
     "name": "Cynthia Carter",
     "gender": "female",
-    "type": "Doctor",
+    "type": "Nurse",
     "skill": "Standard",
-    "href": "#",
+    "href": "cynthia",
+    "edithref": "cynthia",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
@@ -88,7 +92,8 @@ set staff = [
     "gender": "male",
     "type": "Nurse",
     "skill": "Standard",
-    "href": "#",
+    "href": "?rice",
+    "edithref": "?rice",
     "days": [
         "Monday 9am - 5pm",
         "Wedensday 9am - 5pm",
@@ -105,9 +110,10 @@ set staff = [
     "firstname": "Hendrix",
     "name": "Hendrix Woodward",
     "gender": "male",
-    "type": "Doctor",
+    "type": "Nurse",
     "skill": "Neuro",
-    "href": "#",
+    "href": "?hendrix",
+    "edithref": "hendrix",
     "days": [
         "Monday 9am - 5pm",
         "Tuesday 9am - 5pm",
@@ -122,7 +128,7 @@ set staff = [
 {% block citizen_content %}
 <div class="container">
     <p><a href="fiveways" class="link-back">Back</a></p>
-    <h3 class="heading-medium mt0">Health Care Professionals</h3>
+    <h3 class="heading-medium mt0">Healthcare Professionals</h3>
     <div class="grid-row mt30">
         <div class="column-two-thirds">
             <table>
@@ -137,7 +143,7 @@ set staff = [
                 </thead>
                 {% for person in staff %}
                 <tr>
-                    <td>{{ person.name }}</td>
+                    <td><a href="{{ person.edithref }}">{{ person.name }}</a></td>
                     <td>{{ person.type }}</td>
                     <td>{{ person.skill }}</td>
                     <td>
@@ -156,14 +162,14 @@ set staff = [
         <!-- column -->
         <div class="column-one-third">
             <div class="info-panel ">
-                <h4>Health Care Professionals</h4>
+                <h4>Healthcare Professionals</h4>
                 <div class="grid-row">
                     <div class="data column-one-third">
-                      <span class="data-item bold-xlarge">4</span>
-                      <span class="data-item bold-xsmall">Doctors</span>
+                      <span class="data-item bold-xlarge">1</span>
+                      <span class="data-item bold-xsmall">Doctor</span>
                     </div>
                     <div class="data column-one-third">
-                      <span class="data-item bold-xlarge">2</span>
+                      <span class="data-item bold-xlarge">5</span>
                       <span class="data-item bold-xsmall">Nurses</span>
                     </div>
                 </div>
