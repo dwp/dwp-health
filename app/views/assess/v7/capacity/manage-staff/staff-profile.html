@@ -1,0 +1,57 @@
+{% extends path1+"/_addlayout.html" %} 
+
+{% block citizen_content %}
+
+{% for person in staff %}
+{% if person.id == query.personId %}
+<div class="container">
+    <p><a href="fiveways" class="link-back">Back</a></p>
+    <h3 class="heading-medium mt0">Healthcare Professionals</h3>
+    <div class="grid-row mt30">
+        <div class="column-one-third">
+            <nav class="left-nav">
+                <a href="#" class="left-nav__link">Details</a>
+                <a href="#" class="left-nav__link">Skills</a>
+                <a href="#" class="left-nav__link">Available Hours</a>
+                <a href="#" class="left-nav__link"></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="column-two-thirds">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Skill</th>
+                        <th>Available Times</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                
+                <tr>
+                    <td><a href="{{ person.edithref }}">{{ person.name }}</a></td>
+                    <td>{{ person.type }}</td>
+                    <td>{{ person.skill }}</td>
+                    <td>
+                        {% for day in person.days %}
+                            {{day}} {% if not loop.last %}, <br> {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td class="numeric">    
+                        <a href="{{person.href}}">Edit Hours</a>
+                    </td>
+                </tr>
+                
+            </table>
+            <p class="mt30"><a href="new-staff" class="button">Add staff</a></p>
+        </div>
+        <!-- column -->
+       
+    </div>
+    <!-- row -->
+</div>
+{% endif %}
+{% endfor %}
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

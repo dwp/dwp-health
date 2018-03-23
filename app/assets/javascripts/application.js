@@ -225,6 +225,27 @@ $(document).ready(function(){
         var element = $(this).data("toggleContent");
         $("#" + element).toggleClass("hidden");
     });
+
+    if($("[name=HcpType]").value) {
+      if($("[name=HcpType]").value !== "doctor"){
+          $("#HcpSkillLevel").show();
+      } else {
+          $("#HcpSkillLevel").hide();
+
+      }
+    } else {
+          $("#HcpSkillLevel").hide();
+
+    }
+
+    $("[name=HcpType]").change(function(){
+      var value = this.value;
+      if(value === "doctor"){
+        $("#HcpSkillLevel").hide();
+      } else {
+        $("#HcpSkillLevel").show();
+      }
+    });
 });
 
 
