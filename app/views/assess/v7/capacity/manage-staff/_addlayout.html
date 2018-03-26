@@ -1,0 +1,559 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+
+  {% block header %}
+  {% include path1+"/_add_heading.html" %}
+  {% endblock %}
+
+  <main id="content" role="main" class="main-content">
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+
+
+{%
+set staff = [
+  {
+    "id": "5ab5190814d320ffb5a4294e",
+    "index": 0,
+    "guid": "b934ec99-4bf9-4939-af2f-88aeb8d05d43",
+    "surname": "Miles",
+    "firstname": "Barnes",
+    "phone": "0183 655633",
+    "mobile": "07965 463389",
+    "name": "Barnes Miles",
+    "email": "barnes.miles@fakemail.gov.uk",
+    "gender": "male",
+    "type": "Other",
+    "skill": "Standard",
+    "scrutinyPaperwork": false,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab51908deddd53bc5211ccc",
+    "index": 1,
+    "guid": "3c724a4c-0a1e-4386-ad47-87e13ed8fdb1",
+    "surname": "Castaneda",
+    "firstname": "Whitney",
+    "phone": "0185 359135",
+    "mobile": "07978 517370",
+    "name": "Whitney Castaneda",
+    "email": "whitney.castaneda@fakemail.gov.uk",
+    "gender": "female",
+    "type": "Doctor",
+    "skill": "Complex Neuro",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab51908f032436fb0d91f70",
+    "index": 2,
+    "guid": "d81fa5fe-8527-46e0-9287-869ff148f456",
+    "surname": "Mendez",
+    "firstname": "Courtney",
+    "phone": "0191 552228",
+    "mobile": "07953 533248",
+    "name": "Courtney Mendez",
+    "email": "courtney.mendez@fakemail.gov.uk",
+    "gender": "female",
+    "type": "Doctor",
+    "skill": "Complex Neuro",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab51908caa39cb2f1a4a2ed",
+    "index": 3,
+    "guid": "525f54a0-99c8-4a2a-a5a0-74724d154a46",
+    "surname": "Joyner",
+    "firstname": "Elise",
+    "phone": "0195 151838",
+    "mobile": "07958 574264",
+    "name": "Elise Joyner",
+    "email": "elise.joyner@fakemail.gov.uk",
+    "gender": "female",
+    "type": "Other",
+    "skill": "Standard",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab51908b515c19b25b2f93c",
+    "index": 4,
+    "guid": "4b31155e-0c85-4e59-a30e-3a2c46cb5a89",
+    "surname": "Mclean",
+    "firstname": "Grace",
+    "phone": "0194 252838",
+    "mobile": "07955 476365",
+    "name": "Grace Mclean",
+    "email": "grace.mclean@fakemail.gov.uk",
+    "gender": "female",
+    "type": "Other",
+    "skill": "Standard",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab51908886e9dc0fa3eb1f9",
+    "index": 5,
+    "guid": "5d6bf83a-24cc-417c-bd4b-edde4b687564",
+    "surname": "Gilmore",
+    "firstname": "Rutledge",
+    "phone": "0180 045223",
+    "mobile": "07844 420368",
+    "name": "Rutledge Gilmore",
+    "email": "rutledge.gilmore@fakemail.gov.uk",
+    "gender": "male",
+    "type": "Other",
+    "skill": "Neuro",
+    "scrutinyPaperwork": false,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab519086b16a814edc22ef8",
+    "index": 6,
+    "guid": "607c3d69-7cac-4fd4-aba2-e61e32365b91",
+    "surname": "Armstrong",
+    "firstname": "Estes",
+    "phone": "0199 848736",
+    "mobile": "07989 534240",
+    "name": "Estes Armstrong",
+    "email": "estes.armstrong@fakemail.gov.uk",
+    "gender": "male",
+    "type": "Other",
+    "skill": "Neuro",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab5190873578e6fefd36b69",
+    "index": 7,
+    "guid": "e3a4b5ff-742d-4397-a850-e7240202414c",
+    "surname": "Sullivan",
+    "firstname": "Brittney",
+    "phone": "0195 347131",
+    "mobile": "07981 550378",
+    "name": "Brittney Sullivan",
+    "email": "brittney.sullivan@fakemail.gov.uk",
+    "gender": "female",
+    "type": "Other",
+    "skill": "Neuro",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab51908f646c75177beb26a",
+    "index": 8,
+    "guid": "b3c54db7-16e7-4130-b5d0-3fbf8ede5e84",
+    "surname": "Price",
+    "firstname": "Ingrid",
+    "phone": "0194 459930",
+    "mobile": "07826 579207",
+    "name": "Ingrid Price",
+    "email": "ingrid.price@fakemail.gov.uk",
+    "gender": "female",
+    "type": "Other",
+    "skill": "Neuro",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab51908560ba1f4e4867ffe",
+    "index": 9,
+    "guid": "a3cf43e8-2b54-43a6-8ff3-d8610453287a",
+    "surname": "Bauer",
+    "firstname": "Kent",
+    "phone": "0199 150527",
+    "mobile": "07968 531212",
+    "name": "Kent Bauer",
+    "email": "kent.bauer@fakemail.gov.uk",
+    "gender": "male",
+    "type": "Doctor",
+    "skill": "Complex Neuro",
+    "scrutinyPaperwork": false,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab519087571699dbfcfbe26",
+    "index": 10,
+    "guid": "ab27a3d0-326d-48d4-93d7-99e0fa101497",
+    "surname": "Mcintyre",
+    "firstname": "Avery",
+    "phone": "0190 258726",
+    "mobile": "07849 492317",
+    "name": "Avery Mcintyre",
+    "email": "avery.mcintyre@fakemail.gov.uk",
+    "gender": "male",
+    "type": "Doctor",
+    "skill": "Complex Neuro",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  },
+  {
+    "id": "5ab51908e0b33c8532d7a461",
+    "index": 11,
+    "guid": "b88c7597-9bbe-4b2f-bf20-7f8dbfbff80b",
+    "surname": "Sykes",
+    "firstname": "Patti",
+    "phone": "0192 749627",
+    "mobile": "07852 474373",
+    "name": "Patti Sykes",
+    "email": "patti.sykes@fakemail.gov.uk",
+    "gender": "female",
+    "type": "Doctor",
+    "skill": "Complex Neuro",
+    "scrutinyPaperwork": true,
+    "days": {
+      "Monday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Tuesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Wednesday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Thursday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      },
+      "Friday": {
+        "available": true,
+        "start": "9am",
+        "end": "5pm"
+      }
+    }
+  }
+]
+%}
+
+
+
+
+{% set complexTotal = 0 %}
+{% set neuroTotal = 0 %}
+{% set standardTotal = 0 %}
+
+{% for person in staff %}
+{% if person.skill == "Complex Neuro" %}
+    {% set complexTotal = complexTotal + 1 %}
+{% endif %}
+{% if person.skill == "Neuro" %}
+    {% set neuroTotal = neuroTotal + 1 %}
+{% endif %}
+{% if person.skill == "Standard" %}
+    {% set standardTotal = standardTotal + 1 %}
+{% endif %}
+{% endfor %}
+

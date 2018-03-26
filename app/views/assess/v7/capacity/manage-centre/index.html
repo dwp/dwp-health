@@ -1,0 +1,114 @@
+{% extends path2+"/_addlayout.html" %} 
+
+
+
+{% block citizen_content %}
+
+{% for centre in centres %}
+<div class="container">
+    <p><a href="../manage-staff" class="link-back">Back</a></p>
+    <div class="grid-row mt30">
+        <div class="column-one-quarter">
+            <nav class="left-nav">
+                <a href="?tab=details" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'details') }}">Details</a>
+                <a href="?tab=slots" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'slots') }}">Slots</a>
+                <a href="?tab=rooms" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'rooms') }}">Rooms</a>
+                <a href="manage-staff" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'staff') }}">Staff</a>
+            </nav>
+        </div>
+        <section id="details" class="column-two-thirds  grid-row {{ 'hidden' if not (query.tab === 'details') }}">
+            <div  class="column-half">
+                <h3 class="heading-medium mt0">Contact details</h3>
+
+                <dl>
+                    <dt class="heading-small">Phone</dt>
+                    <dd>{{centre.phone}}</dd>
+                    <dt class="heading-small">Email</dt>
+                    <dd>{{centre.email}}</dd>
+                    <dt class="heading-small">Address</dt>
+                    <dd>{{ centre.address | safe }}</dd>
+                </dl>
+
+                <h3 class="heading-medium">Facilities</h3>
+                <ul>
+                    <li>4 rooms</li>
+                    <li>Ground floor access</li>
+                    <li>Lift access</li>
+                    <li>Wheelchair access</li>
+                </ul>
+            </div>
+            <div class="column-half">
+                <h3 class="heading-medium mt0">Opening Times</h3>
+                <dl>
+                    {% for day in centre.openingTimes %}
+                    <dt class="heading-small">{{ day.day }}</dt>
+                    <dd>{{ day.open }}</dd>
+                    {% endfor %}
+                </dl>
+            </div>
+            <div class="column-two-thirds"> 
+
+                <p class="mt30"><a class="button" href="#">Edit details</a></p>
+            </div>
+        </section>
+
+        <section id="Default hours" class="column-two-thirds {{ 'hidden' if not (query.tab === 'slots') }}">
+           slots
+        </section>
+        
+
+        <div class="column-half {{ 'hidden' if not (query.tab === 'rooms') }}">
+            <h2 class="heading-medium mt0">Manage Rooms</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Facilities</th>
+                        <th>Last updated</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for room in centre.rooms %}
+                        <tr>
+                            <td>{{ room.name }}</td>
+                            <td>{{ "Ground floor" if room.groundFloor }}{{ ", " if room.groundFloor and room.telephone }}{{ "Telephone" if room.telephone }}
+                            </td>
+                            <td>{{ room.lastUpdated }}</td>
+                            <td class="numeric"><a href="?room={{room.name}}">Edit</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- column -->
+        <div class="column-one-quarter {{ 'hidden' if not (query.tab === 'rooms') }}">
+            <div class="info-panel ">
+                <div class="grid-row">
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">{{ roomsTotal }}</span>
+                      <span class="data-item bold-xsmall">Rooms</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">{{ groundFloorTotal }}</span>
+                      <span class="data-item bold-xsmall">Ground Floor</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">{{ telephoneTotal }}</span>
+                      <span class="data-item bold-xsmall">Telephone available</span>
+                    </div>
+                    </div>
+
+                <p><a href="new-room" class="button mt30">Add Room</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- column -->
+       
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+
+{% endfor %}
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}
