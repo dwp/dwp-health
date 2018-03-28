@@ -20,61 +20,19 @@
         <div class="column-one-quarter">
             <nav class="left-nav">
                 <a href="?personId={{person.id}}&tab=details" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'details') }}">Details</a>
-                <a href="?personId={{person.id}}&tab=hours" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'hours') }}">Default Hours</a>
-                <a href="?personId={{person.id}}&tab=leave" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'leave') }}">Manage Leave</a>
+                <a href="?personId={{person.id}}&tab=hours" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'hours') }}">Rota</a>
+                <a href="?personId={{person.id}}&tab=leave" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'leave') }}">Availability</a>
                 </ul>
             </nav>
         </div>
-        <section id="details" class="column-two-thirds {{ 'hidden' if not (query.tab === 'details') }}">
-            <div class="grid-row">
-            <div  class="column-half">
-                <dl>
-                    <dt class="heading-small mt0">Name</dt>
-                    <dd>{{person.name}}</dd>
-                    <dt class="heading-small">Phone</dt>
-                    <dd>{{person.phone}}</dd>
-                    <dt class="heading-small">Mobile</dt>
-                    <dd>{{person.mobile}}</dd>
-                    <dt class="heading-small">Email</dt>
-                    <dd>{{person.email}}</dd>
-                </dl>
-            </div>
-            <div class="column-one-quarter">
-                <dl>
-                    <dt class="heading-small mt0">Skill level</dt>
-                    <dd>{{person.skill}}</dd>
-                    <dt class="heading-small">Gender</dt>
-                    <dd>{{person.gender}}</dd>
-                </dl>
-            </div>
-            <div class="column-two-thirds">   
-                <p class="mt30"><a class="button" href="#">Edit details</a></p>
-            </div>
-        </div>
-        </section>
+        
+        {% include path2+"/_details.html" %}
+        {% include path2+"/_hours.html" %}
+        {% include path2+"/_leave.html" %}
+       
 
-            <section id="Default hours" class="column-two-thirds {{ 'hidden' if not (query.tab === 'hours') }}">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>Times</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for day, dayDetails in person.days %}
-                            <tr>
-                                <td>{{day}}</td>
-                                <td>{{dayDetails.start}} to {{dayDetails.end}}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <p><a href="edit-hours" class="button mt30">Edit hours</a></p>
-            </section>
-            <section id="leave" class="column-two-thirds {{ 'hidden' if not (query.tab === 'leave') }}">
-                manage leave
-            </section>
+            
+            
         <!-- column -->
        
     </div>

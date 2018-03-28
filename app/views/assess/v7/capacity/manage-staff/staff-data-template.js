@@ -1,7 +1,7 @@
 //Use this to generate data from https://www.json-generator.com/
 
 [
-  '{{repeat(12)}}',
+  '{{repeat(1)}}',
   {
     id: '{{objectId()}}',
     index: '{{index()}}',
@@ -27,35 +27,35 @@
       if(this.type === "Doctor"){
         return "Complex Neuro";
       } else {
-		return skills[tags.integer(0, skills.length - 1)];
+    return skills[tags.integer(0, skills.length - 1)];
       }
     },
     scrutinyPaperwork: '{{bool()}}',
     days: {
       Monday: {
         available: true,
-        start: "9am",
-        end: "5pm"
+        start: "09:00",
+        end: "17:00"
       },
       Tuesday: {
         available: true,
-        start: "9am",
-        end: "5pm"
+        start: "09:00",
+        end: "17:00"
       },
       Wednesday: {
         available: true,
-        start: "9am",
-        end: "5pm"
+        start: "09:00",
+        end: "17:00"
       },
       Thursday: {
         available: true,
-        start: "9am",
-        end: "5pm"
+        start: "09:00",
+        end: "17:00"
       },
       Friday: {
         available: true,
-        start: "9am",
-        end: "5pm"
+        start: "09:00",
+        end: "17:00"
       }
     }
       

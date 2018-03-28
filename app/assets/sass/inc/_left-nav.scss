@@ -26,8 +26,14 @@
 
 		}	
 
+		&:visited {
+			color: $govuk-blue;
+		}
+
 		&--selected {
 			background: $govuk-blue;
+			border-bottom: 2px solid darken($govuk-blue, 10%);
+
 			color: white;
 			&:visited {
 				color: white;

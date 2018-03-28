@@ -1,0 +1,193 @@
+.calendar  {
+	background: #fff;
+	
+	caption {
+		background: #000;
+		padding: 1em 0 .8em 0;
+		font-weight: 700;
+		position: relative;
+		color: #fff;
+		&:before {
+			content: "\2039";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px; 
+			left: 14px;
+			font-size: 30px;
+			color: #fff;
+		}
+		&:after {
+			content: "\203A";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px; 
+			right: 14px;
+			font-size: 30px;
+			color: #fff;
+		}
+	}
+	th {
+		padding: .8em 0;
+	}
+
+	th, td {
+		text-align: center;
+		width: calc(100% / 7);
+	}
+	td {
+		background: $grey-3;
+		border-left: 1px solid #bfc1c3;
+		border-right: 1px solid #bfc1c3;
+		padding: 1em 0;
+		background: #fff;
+		color: #000;
+	}
+
+	.day {
+		position: relative;
+		cursor: pointer;
+
+		&--today {
+			&:after {
+				content: "today";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				color: white;
+				background: $govuk-blue;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--closed {
+			background: $grey-4;
+			color: $grey-3;
+		}
+
+		&--working {
+			background: lighten($turquoise, 50%)
+		}
+
+
+		&--unavailable {
+			background: $grey-3;
+		}
+	}
+}
+
+
+.calendar-picker  {
+	background: #fff;
+	
+	caption {
+		background: #000;
+		padding: 1em 0 .8em 0;
+		font-weight: 700;
+		position: relative;
+		color: #fff;
+		&:before {
+			content: "\2039";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px; 
+			left: 14px;
+			font-size: 30px;
+			color: #fff;
+		}
+		&:after {
+			content: "\203A";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px; 
+			right: 14px;
+			font-size: 30px;
+			color: #fff;
+		}
+	}
+	th {
+		padding: .8em 0;
+	}
+
+	th, td {
+		text-align: center;
+		width: calc(100% / 7);
+	}
+	td {
+		
+	}
+
+	&__day {
+		position: relative;
+		border-left: 1px solid #bfc1c3;
+		border-right: 1px solid #bfc1c3;
+		background: #fff;
+		padding: 0;
+		line-height: 3;
+		color: #000;
+
+		&--today {
+			&:after {
+				content: "today";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $grey-1;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--closed {
+			background: $grey-4;
+			color: $grey-3;
+		}
+
+		&--working {
+			background: lighten($turquoise, 50%)
+		}
+
+
+		&--unavailable {
+			background: $grey-3;
+		}
+
+		&--selected {
+			background: $purple;
+			color: white;
+			font-weight: bold;
+		}
+	}
+
+	&__link {
+		display: block;		
+		font-weight: bold;
+		text-decoration: none;
+
+		&:visited {
+			color: $govuk-blue;
+		}
+
+		&:hover {
+			background: $govuk-blue;
+			color: white;
+		}
+
+
+	}
+
+
+
+
+}
