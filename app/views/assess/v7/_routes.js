@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 var path = require('path')
 var tog = require('../../../../lib/tog.js')
-staffData = require('../../../../app/views/assess/v7/staff-data.js')
+var staffData = require('../../../../app/views/assess/v7/staff-data.js')
 console.log(path)
 
 router.get('*', function (req, res, next) {
@@ -17,6 +17,20 @@ router.get('*', function (req, res, next) {
   res.locals.staff = staffData;
   next()
 })
+
+router.get('/capacity/manage-centre/capacity/', function(req, res, next){
+
+  res.locals.staffTotals = {}
+    res.locals.staffTotals.available = staffData.filter(function(obj){
+      if(obj.scrutinyPaperwork && obj.days[req.query.day].scrutiny){
+        return false;
+      } else {
+        return obj.days[req.query.day].available
+      }
+    }).length;
+  
+  next();
+});
 
 router.get('/miarussell/*', function (req, res, next) {
   res.locals.firstname = "Mia"

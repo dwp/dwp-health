@@ -191,7 +191,7 @@
 		border-right: 1px solid #bfc1c3;
 		background: #fff;
 		padding: 0;
-		line-height: 3;
+		line-height: 3.5;
 		color: #000;
 
 		&--today {
@@ -206,6 +206,23 @@
 				padding-top: 0.2em;
 				color: white;
 				background: $grey-1;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--full {
+			&:before {
+				content: "full";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $red;
 				font-size: 0.75em;
 				font-weight: bold;
 			}
@@ -229,7 +246,13 @@
 			background: $purple;
 			color: white;
 			font-weight: bold;
+
+			a.calendar-picker__link {
+				color: white;
+			}
 		}
+
+
 	}
 
 	&__link {

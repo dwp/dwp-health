@@ -13,7 +13,7 @@
                 <td>{{day}}</td>
                 <td>{{dayDetails.start}} to {{dayDetails.end}}</td>
                 <td class="numeric">
-                    {% if dayDetails.scrutiny %}
+                    {% if dayDetails.scrutiny and person.scrutinyPaperwork %}
                         <span class="marker marker--scrutiny">Scrutiny filework</span>
                     {% else %}
                         <span class="marker marker--appointments">Appointments</span>

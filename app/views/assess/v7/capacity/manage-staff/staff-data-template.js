@@ -1,7 +1,7 @@
 //Use this to generate data from https://www.json-generator.com/
 
 [
-  '{{repeat(1)}}',
+  '{{repeat(12)}}',
   {
     id: '{{objectId()}}',
     index: '{{index()}}',
@@ -30,34 +30,56 @@
     return skills[tags.integer(0, skills.length - 1)];
       }
     },
-    scrutinyPaperwork: '{{bool()}}',
-    days: {
-      Monday: {
-        available: true,
-        start: "09:00",
-        end: "17:00"
-      },
-      Tuesday: {
-        available: true,
-        start: "09:00",
-        end: "17:00"
-      },
-      Wednesday: {
-        available: true,
-        start: "09:00",
-        end: "17:00"
-      },
-      Thursday: {
-        available: true,
-        start: "09:00",
-        end: "17:00"
-      },
-      Friday: {
-        available: true,
-        start: "09:00",
-        end: "17:00"
+    scrutinyPaperwork: function(){
+      if(this.type == "Doctor") {
+    return Math.random() < 0.5;
+      } else {
+    return false;
       }
-    }
-      
+    },
+    days: {
+      monday: {
+        available: function(){
+          return Math.random() > 0.2;
+        },
+        start: "09:00",
+        end: "17:00",
+        scrutiny: function(){
+          return Math.random() < 0.2;
+        }
+      },
+      tuesday: {
+        available: true,
+        start: "09:00",
+        end: "17:00",
+        scrutiny: function(){
+          return Math.random() < 0.2;
+        }
+      },
+      wednesday: {
+        available: true,
+        start: "09:00",
+        end: "17:00",
+        scrutiny: function(){
+          return Math.random() < 0.2;
+        }
+      },
+      thursday: {
+        available: true,
+        start: "09:00",
+        end: "17:00",
+        scrutiny: function(){
+          return Math.random() < 0.2;
+        }
+      },
+      friday: {
+        available: true,
+        start: "09:00",
+        end: "17:00",
+        scrutiny: function(){
+          return Math.random() < 0.2;
+        }
+      } 
+    } 
   }
 ]
