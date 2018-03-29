@@ -41,11 +41,11 @@
                 <td tabindex="0" class="calendar__day calendar__day--closed">15</td>
             </tr>
             <tr>
-                <td tabindex="0" class="calendar__day calendar__day--appointments">16</td>
-                <td tabindex="0" class="calendar__day calendar__day--appointments">17</td>
-                <td tabindex="0" class="calendar__day calendar__day--appointments">18</td>
-                <td tabindex="0" class="calendar__day calendar__day--appointments">19</td>
-                <td tabindex="0" class="calendar__day calendar__day--scrutiny">20</td>
+                <td tabindex="0" class="calendar__day calendar__day--unavailable">16</td>
+                <td tabindex="0" class="calendar__day calendar__day--unavailable">17</td>
+                <td tabindex="0" class="calendar__day calendar__day--unavailable">18</td>
+                <td tabindex="0" class="calendar__day calendar__day--unavailable">19</td>
+                <td tabindex="0" class="calendar__day calendar__day--unavailable">20</td>
                 <td tabindex="0" class="calendar__day calendar__day--closed">21</td>
                 <td tabindex="0" class="calendar__day calendar__day--closed">22</td>
             </tr>
@@ -72,9 +72,9 @@
 </div>
 
 <div class="column-one-quarter" {{ 'hidden' if not (query.tab === 'leave') }}>
-	<div class="info-panel">
+    <div class="info-panel">
         <p><a href="staff-holiday?personId={{person.id}}" class="mt10">Book time off</a></p>
-		<p><a href="staff-availability?personId={{person.id}}" class="mt10">Change availability</a></p>
-	</div>
+        <p><a href="staff-availability?personId={{person.id}}" class="mt10">Change availability</a></p>
+    </div>
 
 </div>

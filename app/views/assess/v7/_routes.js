@@ -2,6 +2,8 @@ var express = require('express')
 var router = express.Router()
 var path = require('path')
 var tog = require('../../../../lib/tog.js')
+staffData = require('../../../../app/views/assess/v7/staff-data.js')
+console.log(path)
 
 router.get('*', function (req, res, next) {
   // path is only available with the proper value within this sub-module/router.
@@ -12,6 +14,7 @@ router.get('*', function (req, res, next) {
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = req.cookies.stage || 1;
   res.locals.query = req.query;
+  res.locals.staff = staffData;
   next()
 })
 

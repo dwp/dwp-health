@@ -14,8 +14,8 @@
 {% if person.id == query.personId %}
 <div class="container">
     <p><a href="/{{path2}}" class="link-back">Back</a></p>
-    <h3 class="heading-large mt0">Change availablity</h3>
-    <p class="form-label">Choose an end date:</p>
+    <h3 class="heading-large mt0">Add unavailable time</h3>
+    <p class="form-label">Now choose an end date:</p>
 
     <div class="grid-row">
         <div class="column-half">
@@ -63,10 +63,10 @@
                     </tr>
                     <tr>
                         <td class="calendar-picker__day calendar-picker__day--selected">16</td>
-                        <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-availability-3">17</a></td>
-                        <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-availability-3">18</a></td>
-                        <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-availability-3">19</a></td>
-                        <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-availability-3">20</a></td>
+                        <td class="calendar-picker__day--selected">17</td>
+                        <td class="calendar-picker__day--selected">18</td>
+                        <td class="calendar-picker__day--selected">19</td>
+                        <td class="calendar-picker__day--selected">20</td>
                         <td class="calendar-picker__day calendar-picker__day--closed">21</td>
                         <td class="calendar-picker__day calendar-picker__day--closed">22</td>
                     </tr>
@@ -95,6 +95,9 @@
             <div class="info-panel">
                 <h3 class="heading-small">Start date:</h3>
                 <p>16 April 2018</p>
+                <h3 class="heading-small">End date:</h3>
+                <p>20 April 2018</p>
+                <p><a href="/{{path2}}/staff-profile?personId={{person.id}}&updated=true&tab=leave" class="button">Save</a></p>
             </div>
         </div>
     </div>

@@ -838,3 +838,22 @@ a {
 	display: none;
 }
 
+.marker {
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.5rem;
+	padding: 5px;
+	border-radius: 2px;
+	&--appointments {
+		background-color: $turquoise;
+	}
+
+	&--scrutiny {
+		background-color: $pink;
+	}
+}
+
+a:visited {
+	color: $govuk-blue;
+}

@@ -4,6 +4,7 @@
             <tr>
                 <th>Day</th>
                 <th>Times</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -11,6 +12,13 @@
             <tr>
                 <td>{{day}}</td>
                 <td>{{dayDetails.start}} to {{dayDetails.end}}</td>
+                <td class="numeric">
+                    {% if dayDetails.scrutiny %}
+                        <span class="marker marker--scrutiny">Scrutiny filework</span>
+                    {% else %}
+                        <span class="marker marker--appointments">Appointments</span>
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </tbody>
@@ -18,6 +26,6 @@
 </section>
 <div class="column-one-quarter {{ 'hidden' if not (query.tab === 'hours') }}">
     <div class="info-panel">
-        <p class="mt20"><a href="/{{path2}}/edit-staff-hours?personId={{person.id}}" class="button mt0">Edit hours</a></p>
+        <p class="mt20"><a href="/{{path2}}/edit-staff-hours?personId={{person.id}}" class="button mt0">Edit rota</a></p>
     </div>
 </div>

@@ -36,29 +36,33 @@
 		text-align: center;
 		width: calc(100% / 7);
 	}
-	td {
-		background: $grey-3;
-		border-left: 1px solid #bfc1c3;
-		border-right: 1px solid #bfc1c3;
-		padding: 1em 0;
-		background: #fff;
-		color: #000;
-	}
 
-	.day {
+	&__day {
 		position: relative;
 		cursor: pointer;
+		position: relative;
+		border-left: 1px solid #bfc1c3;
+		border-right: 1px solid #bfc1c3;
+		background: #fff;
+		padding: 0;
+		padding-top: 0.5em;
+		line-height: 3;
+		color: #000;
+		box-sizing: border-box;
+
 
 		&--today {
-			&:after {
+			&:before {
 				content: "today";
 				position: absolute;
 				bottom: 0;
 				left: 0;
 				width: 100%;
 				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
 				color: white;
-				background: $govuk-blue;
+				background: $grey-1;
 				font-size: 0.75em;
 				font-weight: bold;
 			}
@@ -69,13 +73,71 @@
 			color: $grey-3;
 		}
 
-		&--working {
-			background: lighten($turquoise, 50%)
-		}
 
 
 		&--unavailable {
 			background: $grey-3;
+			&:after {
+				content: "unavailable";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: black;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--appointments {
+			&:after {
+				content: "available";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $turquoise;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--scrutiny {
+			&:after {
+				content: "scrutiny";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $pink;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--past{
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 1;
+				background: rgba(white, 0.7)
+			}
 		}
 	}
 }
