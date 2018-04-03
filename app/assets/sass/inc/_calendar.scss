@@ -244,10 +244,21 @@
 
 		&--selected {
 			background: $purple;
-			color: white;
+			color: white !important;
 			font-weight: bold;
 
 			a.calendar-picker__link {
+				color: white;
+			}
+		}
+
+		&--selectable {
+			cursor: pointer;
+			color: $govuk-blue;
+			font-weight: bold;
+			
+			&:hover {
+				background: $govuk-blue;
 				color: white;
 			}
 		}

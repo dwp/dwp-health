@@ -13,7 +13,8 @@
 {% for person in staff %}
 {% if person.id == query.personId %}
 <div class="container">
-    <p><a href="/{{path2}}" class="link-back">Back</a></p>
+    <p><a href="/{{path2}}/staff-profile?tab=leave&personId={{person.id}}" class="link-back">Back</a></p>
+    
     <h3 class="heading-large mt0">Add unavailable time</h3>
     <p class="form-label">Now choose an end date:</p>
 

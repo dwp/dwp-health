@@ -220,6 +220,8 @@ $(document).ready(function() {
 });
 
 
+
+
 $(document).ready(function(){
     $("[data-toggle-content]").click(function(event){
         var element = $(this).data("toggleContent");
@@ -250,10 +252,37 @@ $(document).ready(function(){
 
 
 
+//calendar date picker /assess/v7/capacity/manage-staff/staff-availability
+
+$(document).ready(function(){
+
+  var selectedDates = [];
+
+  var generateDateList = function(dates){
+    var output = "";
+    dates.map(date => output = output + "<li>" + date + "</li>");
+    return  output;
+  }
+
+  $(".calendar-picker__day--selectable").click(function(){
+
+    var thisDate = $(this).data("date");
+
+    if(selectedDates.indexOf(thisDate) === -1){
+      selectedDates.push(thisDate);
+    } else {
+      selectedDates = selectedDates.filter( date => date !== thisDate);
+    }
+    console.log(selectedDates);
+
+    $(this).toggleClass("calendar-picker__day--selected");
+
+    $("#availability-form").removeClass("hidden");
+    document.getElementById("dateList").innerHTML = generateDateList(selectedDates);
+
+  });
 
 
-
-
-
+});
 
 

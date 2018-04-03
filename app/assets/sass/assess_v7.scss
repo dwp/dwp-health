@@ -562,7 +562,7 @@ span.status {
 
 .info-panel {
 	background: $grey-3;
-	padding: .3em 1em;
+	padding: 1em;
 	margin-bottom: .6em;
 	border-bottom: 1px solid $grey-3;
 	#no-filter {
@@ -856,4 +856,29 @@ a {
 
 a:visited {
 	color: $govuk-blue;
+}
+
+.column-three-quarters {
+	@include grid-column( 3/4 );
+
+}
+
+.capitalise {
+	text-transform: capitalize;
+}
+
+
+.top-nav {
+	a {
+		margin-right: 1em;
+	}
+}
+
+.link-back--noicon {
+	&.link-back {
+		padding-left: 0;
+	}
+	&:before {
+		display: none;
+	}
 }

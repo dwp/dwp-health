@@ -161,7 +161,7 @@
 					{% for person in staff %}
 						{% if person.days[query.day].available %}
 						<tr>
-							<td><a href="/{{path1}}/manage-staff/staff-profile?personId={{ person.id }}&tab=leave">{{person.name}}</a></td>
+							<td><a href="/{{path1}}/manage-staff/staff-profile/?personId={{ person.id }}&tab=leave">{{person.name}}</a></td>
 							<td>{{person.skill}}</td>
 							<td>{{person.days[query.day].start}} - {{person.days[query.day].end}}</td>
 							<td class="numeric">
