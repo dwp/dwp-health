@@ -15,7 +15,11 @@
 {% for person in staff %}
 {% if person.id == query.personId %}
 <div class="container">
-    <p><a href="/{{path1}}/manage-staff/" class="link-back">Back</a></p>
+    <nav class="top-nav">
+        <a href="/{{path1}}/manage-staff/" class="link-back">Back</a>
+        <a href="/{{path}}/capacity/manage-centre/capacity-2?day=monday" class="link-back link-back--noicon">Manage Capacity</a>
+
+    </nav>
     <div class="grid-row mt30">
         <div class="column-one-quarter">
             <nav class="left-nav">
