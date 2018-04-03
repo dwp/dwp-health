@@ -39,6 +39,8 @@ router.get('/capacity/manage-centre/capacity', function(req, res, next){
   res.locals.totalAppointments = totalAppointments;
   res.locals.slots = slotsData[req.query.day];
   res.locals.totalSlots = slotsData[req.query.day].length;
+
+  res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots;
   
   next();
 });
@@ -61,7 +63,9 @@ router.get('/capacity/manage-centre/capacity-edit-slots', function(req, res, nex
   res.locals.totalAppointments = totalAppointments;
   res.locals.slots = slotsData[req.query.day];
   res.locals.totalSlots = slotsData[req.query.day].length;
+
   
+  res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots;
   next();
 });
 
@@ -83,6 +87,8 @@ router.get('/capacity/manage-centre/capacity-holiday', function(req, res, next){
   res.locals.slots = slotsData[req.query.day];
   res.locals.totalSlots = slotsData[req.query.day].length;
   
+  res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots;
+  
   next();
 });
 
@@ -102,7 +108,12 @@ router.get('/capacity/manage-centre/capacity-2', function(req, res, next){
   res.locals.totalAppointments = totalAppointments;
   res.locals.slots = slotsData2[req.query.day];
   res.locals.totalSlots = slotsData2[req.query.day].length;
-  
+
+  if(req.query.day == "thursday"){
+  res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots - 11;
+  } else {
+  res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots;
+  }
   next();
 });
 
