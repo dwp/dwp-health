@@ -96,7 +96,7 @@ module.exports = {
     },
     {
       "time": "14:00pm",
-      "usedSlots": 0
+      "usedSlots": 11
     },
     {
       "time": "15:00pm",

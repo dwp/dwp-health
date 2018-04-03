@@ -104,33 +104,39 @@
 				  <span class="data-item bold-xsmall">Available Staff</span>
 				</div>
 			</div>
-		    <div class="grey-list">
-		        
-	    		<h3 class="heading-medium mt0">Appointment slots</h3>
-		        <ul class="time-slots time-slots-available">
-		            {% for slot in slots %}
-		            <li class="time-slot__list
-				            {% if staffTotals.available - slot.usedSlots < 1  %}
-				                time-slot__list--full
-				            {% else %}
-				                time-slot__list--available
-				            {% endif %}
-				            ">
-		                <h4 class="time-slot__heading">{{ slot.time }}</h4>
-		                <h4 class="time-slot__heading">
-				            {% if staffTotals.available - slot.usedSlots < 1 %}
-				            full
-				            {% else %}
-				            {{ staffTotals.available - slot.usedSlots }} slots available
-				            {% endif %}</h4>
-		                <span>{{ staffTotals.available }} total slots</span>
-		            </li>
-		            {% endfor %}
-		            </li>
-		        </ul>
-		        <p><a href="capacity-edit-slots?day={{query.day}}" class="button">Edit slots</a></p>
-		    </div>
+			 <div class="grey-list">
+			    <fieldset>
+			        <legend class="heading-small">Available slots for Thursday 4th Decenber</legend>
+			    
 
+
+			        {%for slot in slots %}
+			        <label class="form-label mt20" for="slot-{{slot.time}}">{{slot.time}}</label>
+			        <input class="form-control" id="slot-{{slot.time}}" type="number" name="slot-{{slot.time}}" value="{{ staffTotals.available - slot.usedSlots }}">
+
+			       <!--  <li 
+			            class="time-slot__list
+			            {% if slot.remainingSlots == 0 %}
+			                time-slot__list--full
+			            {% else %}
+			                time-slot__list--available
+			            {% endif %}
+			            ">
+			            <h4 class="time-slot__heading">{{ slot.time }}</h4>
+			            <h4 class="time-slot__heading">
+			            {% if slot.remainingSlots == 0 %}
+			            full
+			            {% else %}
+			            {{ slot.remainingSlots }} slots available
+			            {% endif %}</h4>
+			            <span>{{ slot.availableSlots }} total slots</span>
+
+			        </li> -->
+			        {% endfor %}
+			    </fieldset>
+			    <p><a href="capacity-2?day={{query.day}}" class="button">Save</a></p>
+			   </div>
+		   
 		    <h2 class="heading-medium">Today's staff</h2>
 			<table>
 				<thead>

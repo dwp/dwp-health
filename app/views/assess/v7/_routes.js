@@ -6,6 +6,7 @@ var staffData = require('../../../../app/views/assess/v7/staff-data.js')
 var staffDataHoliday = require('../../../../app/views/assess/v7/staff-data-holiday.js')
 var staffData2 = require('../../../../app/views/assess/v7/staff-data-2.js')
 var slotsData = require('../../../../app/views/assess/v7/slots-data.js')
+var slotsData2 = require('../../../../app/views/assess/v7/slots-data-2.js')
 console.log(path)
 
 router.get('*', function (req, res, next) {
@@ -22,6 +23,28 @@ router.get('*', function (req, res, next) {
 })
 
 router.get('/capacity/manage-centre/capacity', function(req, res, next){
+
+  res.locals.staffTotals = {}
+  res.locals.staffTotals.available = staffData.filter(function(obj){
+    if(obj.scrutinyPaperwork && obj.days[req.query.day].scrutiny){
+      return false;
+    } else {
+      return obj.days[req.query.day].available
+    }
+  }).length;
+
+  var totalAppointments = 0;
+
+  slotsData[req.query.day].map(day => totalAppointments = totalAppointments + day.usedSlots);
+  res.locals.totalAppointments = totalAppointments;
+  res.locals.slots = slotsData[req.query.day];
+  res.locals.totalSlots = slotsData[req.query.day].length;
+  
+  next();
+});
+
+
+router.get('/capacity/manage-centre/capacity-edit-slots', function(req, res, next){
 
   res.locals.staffTotals = {}
   res.locals.staffTotals.available = staffData.filter(function(obj){
@@ -64,9 +87,8 @@ router.get('/capacity/manage-centre/capacity-holiday', function(req, res, next){
 });
 
 router.get('/capacity/manage-centre/capacity-2', function(req, res, next){
-  res.locals.staff = staffData2;
   res.locals.staffTotals = {}
-  res.locals.staffTotals.available = staffData2.filter(function(obj){
+  res.locals.staffTotals.available = staffData.filter(function(obj){
     if(obj.scrutinyPaperwork && obj.days[req.query.day].scrutiny){
       return false;
     } else {
@@ -76,10 +98,10 @@ router.get('/capacity/manage-centre/capacity-2', function(req, res, next){
 
   var totalAppointments = 0;
 
-  slotsData[req.query.day].map(day => totalAppointments = totalAppointments + day.usedSlots);
+  slotsData2[req.query.day].map(day => totalAppointments = totalAppointments + day.usedSlots);
   res.locals.totalAppointments = totalAppointments;
-  res.locals.slots = slotsData[req.query.day];
-  res.locals.totalSlots = slotsData[req.query.day].length;
+  res.locals.slots = slotsData2[req.query.day];
+  res.locals.totalSlots = slotsData2[req.query.day].length;
   
   next();
 });
