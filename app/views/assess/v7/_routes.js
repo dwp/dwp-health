@@ -93,8 +93,9 @@ router.get('/capacity/manage-centre/capacity-holiday', function(req, res, next){
 });
 
 router.get('/capacity/manage-centre/capacity-2', function(req, res, next){
+  res.locals.staff = staffData2;
   res.locals.staffTotals = {}
-  res.locals.staffTotals.available = staffData.filter(function(obj){
+  res.locals.staffTotals.available = staffData2.filter(function(obj){
     if(obj.scrutinyPaperwork && obj.days[req.query.day].scrutiny){
       return false;
     } else {
