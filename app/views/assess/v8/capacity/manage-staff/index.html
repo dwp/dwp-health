@@ -1,16 +1,10 @@
-{% extends path2+"/_addlayout.html" %} 
-
+{% extends path1+"/_manage-centre-layout.html" %} 
 
 
 {% block citizen_content %}
-<div class="container">
-    <nav class="top-nav"> 
-        <a href="/{{path}}/assessment-centres" class="link-back">Back</a>
-        <a href="/{{path}}/capacity/manage-centre/capacity?day=monday" class="link-back link-back--noicon">Manage Capacity</a>
-    </nav>
+<div class="containers">
     <div class="grid-row mt30">
-        {% include path1+"/manage-centre/_nav.html" %}
-        <div class="column-half">
+            <div class="column-half">
             <table>
                 <thead>
                     <tr>
@@ -21,7 +15,7 @@
                 </thead>
                 {% for person in staff %}
                 <tr>
-                    <td><a href="staff-profile?personId={{ person.id }}&tab=details">{{ person.name }}</a></td>
+                    <td><a href="manage-staff/staff-profile/{{ person.id }}?tab=details">{{ person.name }}</a></td>
                     <td>{{ person.skill }} {{ ", Scrutiny" if person.scrutinyPaperwork}}</td>
                     <td>
                         {% for day, dayDetails in person.days %}

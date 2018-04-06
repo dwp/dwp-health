@@ -2,11 +2,10 @@ var express = require('express')
 var router = express.Router()
 var path = require('path')
 var tog = require('../../../../lib/tog.js')
-var staffData = require('../../../../app/views/assess/v7/staff-data.js')
-var staffDataHoliday = require('../../../../app/views/assess/v7/staff-data-holiday.js')
-var staffData2 = require('../../../../app/views/assess/v7/staff-data-2.js')
-var slotsData = require('../../../../app/views/assess/v7/slots-data.js')
-var slotsData2 = require('../../../../app/views/assess/v7/slots-data-2.js')
+var staffDataHoliday = require('../../../../app/views/assess/v8/staff-data-holiday.js')
+var staffData2 = require('../../../../app/views/assess/v8/staff-data-2.js')
+var slotsData = require('../../../../app/views/assess/v8/slots-data.js')
+var slotsData2 = require('../../../../app/views/assess/v8/slots-data-2.js')
 console.log(path)
 
 router.get('*', function (req, res, next) {
@@ -14,13 +13,95 @@ router.get('*', function (req, res, next) {
   res.locals.path = req.baseUrl.substr(1)
   // create some other useful path variables.
   var bits = req.params[0].substr(1).split('/')
+  res.locals.root = "/assess/v8"
+  res.locals.manageStaffPath = "assess/v8/capacity/manage-staff"
   res.locals.path1 = res.locals.path + "/" + bits[0]
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = req.cookies.stage || 1;
   res.locals.query = req.query;
-  res.locals.staff = staffData;
+  //res.locals.staff = staffData;
   next()
 })
+
+function getCentreDetails(req, res){
+  var centres = require('../../../../app/views/assess/v8/data/centres.js'),
+        centreId = req.params.centreId;
+
+  if(centreId){
+      res.locals.centre = centres[centreId];
+      res.locals.centre.id = centreId;
+  } else {
+    res.locals.centre = centres["fiveways"];
+    res.locals.centre.id = "fiveways";
+
+  }
+};
+
+
+
+router.get('/capacity/manage-centre/:centreId*', function(req, res, next){
+  getCentreDetails(req, res)
+  res.locals.staff = require('../../../../app/views/assess/v8/staff-data.js')
+  next()
+})
+
+
+
+router.get('/capacity/manage-centre/:centreId', function(req, res, next){
+  res.render("assess/v8/capacity/manage-centre/index")
+})
+
+router.get('/capacity/manage-centre/:centreId/:section*', function(req, res, next){
+  res.locals.selectedTab = req.params.section;
+  next()
+})
+
+router.get('/capacity/manage-centre/:centreId/manage-staff', function(req, res, next){
+  res.render("assess/v8/capacity/manage-staff/index");
+})
+
+
+
+
+router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId*', function(req, res, next){
+  var staff = require('../../../../app/views/assess/v8/data/staff.js');
+
+  res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
+  next()
+})
+
+
+router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId', function(req, res, next){
+  res.render("assess/v8/capacity/manage-staff/staff-profile");
+})
+
+router.get('/capacity/manage-centre/:centreId/capacity', function(req, res, next){
+  res.locals.selectedTab = "capacity";
+
+  res.locals.staffTotals = {}
+  res.locals.staffTotals.available = res.locals.staff.filter(function(obj){
+    if(obj.scrutinyPaperwork && obj.days[req.query.day].scrutiny){
+      return false;
+    } else {
+      return obj.days[req.query.day].available
+    }
+  }).length;
+
+  var totalAppointments = 0;
+
+  slotsData[req.query.day].map(day => totalAppointments = totalAppointments + day.usedSlots);
+  res.locals.totalAppointments = totalAppointments;
+  res.locals.slots = slotsData[req.query.day];
+  res.locals.totalSlots = slotsData[req.query.day].length;
+
+  res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots;
+  res.render("assess/v8/capacity/manage-centre/capacity");
+})
+
+router.get('/capacity/manage-centre/:centreId/:section', function(req, res, next){
+  res.render("assess/v8/capacity/manage-centre/index")
+})
+
 
 router.get('/capacity/manage-centre/capacity', function(req, res, next){
 
