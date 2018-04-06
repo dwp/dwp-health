@@ -37,6 +37,11 @@ function getCentreDetails(req, res){
   }
 };
 
+router.get('/assessment-centres', function(req, res, next){
+  res.locals.centres = require('../../../../app/views/assess/v8/data/centres.js')
+  next()
+})
+
 
 
 router.get('/capacity/manage-centre/:centreId*', function(req, res, next){

@@ -41,7 +41,6 @@
           <div class="column-full">
           
           
-          
               <table class="appointments-view">
 
                 <thead>
@@ -51,16 +50,12 @@
                   </tr>
                 </thead>
 
-
+                {% for centreKey, centre in centres %}
                 <tr>
-                  <td style="padding-left:15px;"><a href="capacity/manage-centre?tab=details">Five Ways House</a></td>
-                  <td>Birmingham, B1 1UH</td>
+                  <td style="padding-left:15px;"><a href="capacity/manage-centre/{{centreKey}}/details">{{centre.name}}</a></td>
+                  <td>{{centre.location}}</td>
                 </tr>
-                
-                <tr>
-                  <td style="padding-left:15px;"><a href="#">Tresco House</a></td>
-                  <td>London, SW1 5EB</td>
-                </tr>
+                {% endfor %}
 
                                
               </table>
