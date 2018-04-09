@@ -46,7 +46,7 @@ router.get('/assessment-centres', function(req, res, next){
 
 router.get('/capacity/manage-centre/:centreId*', function(req, res, next){
   getCentreDetails(req, res)
-  res.locals.staff = require('../../../../app/views/assess/v8/staff-data.js')
+  res.locals.staff = require('../../../../app/views/assess/v8/data/staff.js')
   next()
 })
 
@@ -62,6 +62,14 @@ router.get('/capacity/manage-centre/:centreId/:section*', function(req, res, nex
 })
 
 router.get('/capacity/manage-centre/:centreId/manage-staff', function(req, res, next){
+    res.locals.staffTotals = {};
+    res.locals.staffTotals.complex = res.locals.staff.filter(staff => staff.skill === "Complex Neuro").length;
+    res.locals.staffTotals.neuro = res.locals.staff.filter(staff => staff.skill === "Neuro").length;;
+    res.locals.staffTotals.standard = res.locals.staff.filter(staff => staff.skill === "Standard").length;
+    res.locals.staffTotals.scrutiny = res.locals.staff.filter(staff => staff.scrutinyPaperwork).length;
+    res.locals.staffTotals.total = res.locals.staff.length;
+
+  //
   res.render("assess/v8/capacity/manage-staff/index");
 })
 
@@ -78,6 +86,10 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId', function(req, res, next){
   res.render("assess/v8/capacity/manage-staff/staff-profile");
+})
+
+router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId/:section', function(req, res, next){
+  res.render("assess/v8/capacity/manage-staff/" + req.params.section);
 })
 
 router.get('/capacity/manage-centre/:centreId/capacity', function(req, res, next){
@@ -103,9 +115,30 @@ router.get('/capacity/manage-centre/:centreId/capacity', function(req, res, next
   res.render("assess/v8/capacity/manage-centre/capacity");
 })
 
-router.get('/capacity/manage-centre/:centreId/:section', function(req, res, next){
+router.get('/capacity/manage-centre/:centreId/details', function(req, res, next){
   res.render("assess/v8/capacity/manage-centre/index")
 })
+
+router.get('/capacity/manage-centre/:centreId/slots', function(req, res, next){
+  res.render("assess/v8/capacity/manage-centre/index")
+})
+router.get('/capacity/manage-centre/:centreId/rooms', function(req, res, next){
+  res.render("assess/v8/capacity/manage-centre/index")
+})
+
+router.get('/capacity/manage-centre/:centreId/:section', function(req, res, next){
+  res.render("assess/v8/capacity/manage-centre/" + req.params.section)
+})
+
+router.get('/capacity/manage-centre/:centreId/manage-staff/new-staff-*', function(req, res, next){
+  res.locals.person = require('../../../../app/views/assess/v8/data/new-staff.js');
+  next()
+});
+
+router.get('/capacity/manage-centre/:centreId/manage-staff/:section', function(req, res, next){
+  res.render("assess/v8/capacity/manage-staff/" + req.params.section)
+});
+
 
 
 router.get('/capacity/manage-centre/capacity', function(req, res, next){

@@ -44,7 +44,13 @@
 
 
           </fieldset>
-        <p class="mt30"><a href="/{{path2}}/" class="button">Save</a></p>
+        <p class="mt30">
+            {% if staff.id %}
+                <a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=hours" class="button">Save</a>
+            {% else %}
+                <a href="/{{path2}}/{{centre.id}}/manage-staff?tab=hours" class="button">Save</a>
+        {% endif %}
+        </p>
 
         </div>
         <div class="column-one-third">

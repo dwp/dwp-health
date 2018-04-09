@@ -3,10 +3,10 @@
 
 {% block citizen_content %}
 <div class="container">
-    <p><a href="/{{path2}}" class="link-back">Back</a></p>
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff" class="link-back">Back</a></p>
     <h3 class="heading-medium mt0">Add a new Healthcare Professional</h3>
 
-    {% include path2+ "/_staff-personal-details.html" %}
+    {% include path1+ "/manage-staff/_staff-personal-details.html" %}
      
     <!-- row -->
 </div>

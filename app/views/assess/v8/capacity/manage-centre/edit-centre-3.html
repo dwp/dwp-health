@@ -1,0 +1,40 @@
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+
+
+{% block manage_centre_nav %}
+<p><a href="/{{path2}}/{{centre.id}}/details" class="link-back">Back</a></p>
+
+{% endblock %}
+  
+
+
+{% block citizen_content %}
+<div class="container">
+    <div class="grid-row">
+        <div class="column-full">
+
+            <fieldset id="details-group">
+                <legend class="heading-medium">
+                    Enter other details for {{centre.name}}
+                </legend>
+                <span class="form-hint">Add as many as you need</span>
+            <p><button class="button-secondary" data-click-for-more>Add more</button></p>
+            {% for detail in centre.details %}
+
+            <div class="form-group">
+                <label for="centre-details-{{loop.index}}" class="form-label visually-hidden">Detail line {{loop.index}}</label>
+                <input type="text" name="centre-details-{{loop.index}}" class="form-control" value="{{detail}}">
+                <a href="#">remove</a>
+            </div>
+
+            {% endfor %}
+            </fieldset>
+            
+            <p><a href="details" class="button">Save and finish</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

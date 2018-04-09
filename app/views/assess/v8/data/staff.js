@@ -105,7 +105,7 @@ module.exports = [
     "email": "maura.chaney@fakemail.gov.uk",
     "gender": "female",
     "type": "Other",
-    "skill": "Standard",
+    "skill": "Non neuro",
     "scrutinyPaperwork": false,
     "days": {
       "monday": {
@@ -434,7 +434,7 @@ module.exports = [
     "email": "hale.gamble@fakemail.gov.uk",
     "gender": "male",
     "type": "Other",
-    "skill": "Standard",
+    "skill": "Non neuro",
     "scrutinyPaperwork": false,
     "days": {
       "monday": {

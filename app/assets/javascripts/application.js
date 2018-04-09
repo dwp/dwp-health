@@ -250,6 +250,23 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("[data-click-for-more]").click(function(event){
+        var template = `<div class="form-group">
+                <input type="text" name="centre-details-new" class="form-control" value="">
+            </div>`;
+
+          var group = document.getElementById('details-group');
+
+          $(group).append(template);
+
+    });
+
+    
+});
+
+
+
 
 
 //calendar date picker /assess/v7/capacity/manage-staff/staff-availability

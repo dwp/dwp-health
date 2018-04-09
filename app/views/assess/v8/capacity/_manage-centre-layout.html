@@ -21,8 +21,9 @@
   {% endblock %}
 
   <main id="content" role="main" class="main-content">
+  {% block manage_centre_nav %}
 
-    <div class="container">
+    <div class="">
       <nav class="section-tabs clearfix mb20">
         <ul>
             <li class="{{ 'active' if (selectedTab === 'details') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/details">Details</a></li>
@@ -32,7 +33,7 @@
             <li class="{{ 'active' if (selectedTab === 'capacity') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/capacity?day=monday">Capacity Planner</a></li>
         </ul>
       </nav>
-
+  {% endblock %}
       {% block citizen_content %}{% endblock %}
 
 

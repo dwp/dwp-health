@@ -5,6 +5,13 @@ module.exports = {
     "email": "fiveways@fakemail.gov.uk",
     "location": "Birmingham",
     "address": "1st Floor Short Spur <br /> Fiveways House <br /> Islington Row <br /> Birmingham <br /> B15 1SL",
+    "addressSplit": {
+      "line1": "1st Floor Short Spur",
+      "line2": "Fiveways House",
+      "line3": "Islington Row",
+      "town": "Birmingham",
+      "postcode": "B15 1SL"
+    },
     "openingTimes": [
       {
         "day": "Monday",
@@ -34,7 +41,40 @@ module.exports = {
         "day": "Sunday",
         "open": "Closed"
       }
-    ],
+      ],
+    "openingTimesForm": {
+      "Monday": {
+        "open": true,
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "Tuesday": {
+        "open": true,
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "Wednesday": {
+        "open": true,
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "Thursday": {
+        "open": true,
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "Friday": {
+        "open": true,
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "Saturday": {
+        "open": false
+      },
+      "Sunday": {
+        "open": false
+      }
+    },
     "details": [
     	"Ground floor access",
     	"Wheelchair access",

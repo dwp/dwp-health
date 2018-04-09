@@ -27,7 +27,7 @@
                 </legend>
                 <div class="multiple-choice">
                     <input id="skill-standard" type="radio" name="skill" value="standard" {{ checked if person.skill=="Standard" }}>
-                    <label for="skill-standard">Standard</label>
+                    <label for="skill-standard">Non neuro</label>
                 </div>
                 <div class="multiple-choice">
                     <input id="skill-neuro" type="radio" name="skill" value="neuro" {{ checked if person.skill=="Neuro" }}>
@@ -57,9 +57,9 @@
             </fieldset>
         </div>
         {% if person.id %}
-        <p class="mt30"><a href="/{{path2}}/edit-staff-hours?personId={{person.id}}" class="button">Save</a></p>
+        <p class="mt30"><a href="edit-staff-hours" class="button">Save</a></p>
         {% else %}
-        <p class="mt30"><a href="/{{path2}}/new-staff-hours" class="button">Save</a></p>
+        <p class="mt30"><a href="new-staff-hours" class="button">Save</a></p>
         {% endif %}
     </div>
 </div>
