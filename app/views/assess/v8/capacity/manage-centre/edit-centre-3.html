@@ -14,22 +14,23 @@
 <div class="container">
     <div class="grid-row">
         <div class="column-full">
+            <h2 class="heading-medium mt0">Other details for {{centre.name}}</h2>
 
-            <fieldset id="details-group">
-                <legend class="heading-medium">
-                    Enter other details for {{centre.name}}
-                </legend>
+            <ul class="list-bullet" id="details-list">
+                {% for detail in centre.details %}
+                    <li>{{detail}} (<a href="#" data-click-to-remove>remove</a>)</li>
+                {% endfor %}
+            </ul>
+
+
+            <div class="form-group mt30">
+                <label for="centre-new-detail" class="form-label">Add a new detail about {{centre.name}}</label>
                 <span class="form-hint">Add as many as you need</span>
-            <p><button class="button-secondary" data-click-for-more>Add more</button></p>
-            {% for detail in centre.details %}
-
-            <div class="form-group">
-                <label for="centre-details-{{loop.index}}" class="form-label visually-hidden">Detail line {{loop.index}}</label>
-                <input type="text" name="centre-details-{{loop.index}}" class="form-control" value="{{detail}}">
-                <a href="#">remove</a>
+                <textarea type="text" name="centre-new-detail" id="centre-new-detail-input" class="form-control" value=""></textarea>
+                <button class="button-secondary mt10" data-click-add-more>Add to list</button>
             </div>
 
-            {% endfor %}
+
             </fieldset>
             
             <p><a href="details" class="button">Save and finish</a></p>

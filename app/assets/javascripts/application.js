@@ -251,16 +251,56 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $("[data-click-for-more]").click(function(event){
-        var template = `<div class="form-group">
-                <input type="text" name="centre-details-new" class="form-control" value="">
-            </div>`;
+    $("[data-click-add-more]").click(function(event){
+      var input = document.getElementById('centre-new-detail-input');
+      var template = '<li>' +
+          input.value + 
+          ' (<a href="#" data-click-to-remove>remove</a>)' +
+          '</li>';
 
-          var group = document.getElementById('details-group');
-
-          $(group).append(template);
+      var list = document.getElementById('details-list');
+      
+      $(list).append(template);
+      input.value = "";
 
     });
+
+
+  $(document).on("click", "[data-click-to-remove]", function(event){
+      $(this).parent("li").remove();
+    });
+
+  $("#appointment-times-edit").hide();
+  $("#appointment-times-view-edited").hide();
+
+
+
+  $(document).on("click", "[data-click-edit-slots]", function(event){
+      $("#appointment-times-edit").show();
+      $("#appointment-times-view").hide();
+
+    });
+
+  $(document).on("click", "[data-click-save-slots]", function(event){
+      $("#appointment-times-edit").hide();
+      $("#appointment-times-view-edited").show();
+
+    });
+
+  $(document).on("click", "[data-add-appointment-time]", function(event){
+      
+      var list = document.getElementById('edit-times-list'),
+          input = document.getElementById('new-time-input');
+
+      var template = `<li id="slot-time-">
+                        <div>${input.value}</div>
+                        <a href="#" data-click-to-remove>remove</a>
+                    </li>`;
+      $(list).append(template);
+      
+      input.value = "";
+    });
+  
 
     
 });
