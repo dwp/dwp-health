@@ -130,7 +130,7 @@ router.get('/capacity/manage-centre/:centreId/:section', function(req, res, next
   res.render("assess/v8-1/capacity/manage-centre/" + req.params.section)
 })
 
-router.get('/capacity/manage-centre/:centreId/manage-staff/new-staff-*', function(req, res, next){
+router.get('/capacity/manage-centre/:centreId/manage-staff/new-staff-hours', function(req, res, next){
   res.locals.person = require('../../../../app/views/assess/v8-1/data/new-staff.js');
   next()
 });
