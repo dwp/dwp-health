@@ -88,6 +88,8 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
   res.render("assess/v8/capacity/manage-staff/staff-profile");
 })
 
+
+
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId/:section', function(req, res, next){
   res.render("assess/v8/capacity/manage-staff/" + req.params.section);
 })

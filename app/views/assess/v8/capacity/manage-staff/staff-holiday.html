@@ -1,17 +1,12 @@
-{% extends path2+"/_addlayout.html" %} 
+{% extends path1+"/_manage-centre-layout.html" %} 
 
 
 {% block header %}
-{% for person in staff %}
-{% if person.id == query.personId %}
-  {% include path2+"/_staff_heading.html" %}
-{% endif %}
-{% endfor %}
-{% endblock %}
 
+  {% include path2+"/_staff_heading.html" %}
+
+{% endblock %}
 {% block citizen_content %}
-{% for person in staff %}
-{% if person.id == query.personId %}
 <div class="container">
     <p><a href="/{{path2}}/staff-profile?tab=leave&personId={{person.id}}" class="link-back">Back</a></p>
     <h3 class="heading-large mt0">Change availablity</h3>
@@ -49,7 +44,7 @@
             <tr>
                 <td class="calendar-picker__day calendar-picker__day--closed">2</td>
                 <td class="calendar-picker__day calendar-picker__day--closed">3</td>
-                <td class="calendar-picker__day calendar-picker__day--today"><a class="calendar-picker__link" href="staff-holiday-2?personId={{person.id}}">4</a> <span class="visually-hidden">Today</span></td>
+                <td class="calendar-picker__day calendar-picker__day--today"><a class="calendar-picker__link" href="staff-holiday-2">4</a> <span class="visually-hidden">Today</span></td>
                 <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2?personId={{person.id}}">5</a></td>
                 <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2?personId={{person.id}}">6</a></td>
                 <td class="calendar-picker__day calendar-picker__day--closed">7</td>
@@ -98,7 +93,6 @@
      </div>
     <!-- row -->
 </div>
-{% endif %}
-{% endfor %}
+
 <!-- container -->
 {% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

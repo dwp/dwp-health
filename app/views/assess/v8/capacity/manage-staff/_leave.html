@@ -199,8 +199,8 @@
 
 <div class="column-one-quarter" {{ 'hidden' if not (query.tab === 'leave') }}>
 	<div class="info-panel">
-        <p><a href="/{{path1}}/manage-staff/staff-holiday?personId={{person.id}}" class="mt10">Book time off</a></p>
-		<p><a href="/{{path1}}/manage-staff/staff-availability?personId={{person.id}}" class="mt10">Change availability</a></p>
+        <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}/staff-holiday" class="mt10">Book time off</a></p>
+		<p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}/staff-availability" class="mt10">Change availability</a></p>
 	</div>
 
 </div>

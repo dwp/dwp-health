@@ -1,17 +1,13 @@
-{% extends path2+"/_addlayout.html" %} 
+{% extends path1+"/_manage-centre-layout.html" %} 
 
 
 {% block header %}
-{% for person in staff %}
-{% if person.id == query.personId %}
+
   {% include path2+"/_staff_heading.html" %}
-{% endif %}
-{% endfor %}
+
 {% endblock %}
 
 {% block citizen_content %}
-{% for person in staff %}
-{% if person.id == query.personId %}
 <div class="container">
     <p><a href="/{{path2}}/staff-profile?tab=leave&personId={{person.id}}" class="link-back">Back</a></p>
     
@@ -101,8 +97,6 @@
     </div>
     <!-- row -->
 </div>
-{% endif %}
-{% endfor %}
 <!-- container -->
 {% endblock %} 
 {% block footer_top %} 
