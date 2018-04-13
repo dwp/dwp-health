@@ -278,13 +278,13 @@ $(document).ready(function(){
   $(document).on("click", "[data-click-edit-slots]", function(event){
       $("#appointment-times-edit").show();
       $("#appointment-times-view").hide();
+      $("#appointment-times-view-edited").hide();
 
     });
 
   $(document).on("click", "[data-click-save-slots]", function(event){
       $("#appointment-times-edit").hide();
       $("#appointment-times-view-edited").show();
-
     });
 
   $(document).on("click", "[data-add-appointment-time]", function(event){
