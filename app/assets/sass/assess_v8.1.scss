@@ -62,7 +62,6 @@ td,th {
   background-color: #005ea5;
   padding: 20px 40px 0;
   color: white;
-  margin-bottom: 20px;
 }
 
 .staff__centred {
@@ -904,6 +903,7 @@ a:visited {
   }
 }
 
+
   .left-panel {
 	  padding: 16px 24px 0 36px;
   }
@@ -927,3 +927,27 @@ a:visited {
 	  border-left: 1px solid $grey-2;
 	  background: #fff;
   }
+
+
+.column-three-quarters {
+	width: 75%;
+	float: left;
+	padding: 0 0 0 25px;
+	position: relative;
+	&:after {
+		position: absolute;
+		content: "/";
+		height: 3500px;
+		width: 25px;
+		background: #fff;
+		top: 0;
+		right: -25px;
+		color: #fff;
+	}
+}
+
+
+.main-row {
+	background: $grey-3;
+
+}
