@@ -46,11 +46,19 @@
     "serve-favicon": "2.4.2",
     "standard": "^10.0.2",
     "supertest": "^3.0.0",
-    "sync-request": "^4.0.3"
+    "sync-request": "^4.0.3",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp-babel": "^7.0.1"
   },
   "greenkeeper": {
     "ignore": [
       "nunjucks"
     ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp-babel": "^7.0.1"
   }
 }
