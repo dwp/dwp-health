@@ -1,5 +1,4 @@
-{% for person in staff %}
-{% if person.id == query.personId %}
+
 
 <div class="column-half" {{ 'hidden' if not (query.tab==='leave' ) }}>
     <table 
@@ -205,5 +204,3 @@
 
 </div>
 
-{% endif %}
-{% endfor %}
