@@ -92,7 +92,15 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
   res.render("assess/v9/capacity/manage-staff/" + req.params.section);
 })
 
-router.get('/capacity/manage-centre/:centreId/capacity', function(req, res, next){
+router.get('/capacity/manage-centre/:centreId/capacity-overbooked', function(req, res, next){
+
+  res.locals.staff = require('../../../../app/views/assess/v9/data/staff-overbooked.js');
+
+  next();
+})  
+
+
+router.get('/capacity/manage-centre/:centreId/capacity*', function(req, res, next){
   res.locals.selectedTab = "capacity";
 
   res.locals.staffTotals = {}
@@ -114,6 +122,9 @@ router.get('/capacity/manage-centre/:centreId/capacity', function(req, res, next
   res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots;
   res.render("assess/v9/capacity/manage-centre/capacity");
 })
+
+
+
 
 router.get('/capacity/manage-centre/:centreId/details', function(req, res, next){
   res.render("assess/v9/capacity/manage-centre/index")

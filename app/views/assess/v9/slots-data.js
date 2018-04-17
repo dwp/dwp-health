@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       "time": "11:00am",
-      "usedSlots": 12
+      "usedSlots": 9
     },
     {
       "time": "13:00pm",
@@ -28,15 +28,15 @@ module.exports = {
   "tuesday": [
     {
       "time": "9:00am",
-      "usedSlots": 1
+      "usedSlots": 11
     },
     {
       "time": "10:00am",
-      "usedSlots": 2
+      "usedSlots": 11
     },
     {
       "time": "11:00am",
-      "usedSlots": 5
+      "usedSlots":11
     },
     {
       "time": "13:00pm",
@@ -44,11 +44,11 @@ module.exports = {
     },
     {
       "time": "14:00pm",
-      "usedSlots": 1
+      "usedSlots": 9
     },
     {
       "time": "15:00pm",
-      "usedSlots": 5
+      "usedSlots": 11
     }
   ],
   "wednesday": [

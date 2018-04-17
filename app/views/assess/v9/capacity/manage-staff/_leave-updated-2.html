@@ -112,11 +112,11 @@
             <tr>
                 <td tabindex="0" 
                     class="calendar__day 
-                    calendar__day--appointments">16</td>
+                        {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                        {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">16</td>
                 <td tabindex="0" 
                     class="calendar__day 
-                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
-                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">17</td>
+                    calendar__day--unavailable">17</td>
                 <td tabindex="0" 
                     class="calendar__day
                      {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
@@ -143,8 +143,7 @@
                         {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">23</td>
                 <td tabindex="0" 
                     class="calendar__day 
-                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
-                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">24</td>
+                    calendar__day--unavailable">24</td>
                 <td tabindex="0" 
                     class="calendar__day
                      {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
@@ -171,8 +170,7 @@
                         {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">30</td>
                 <td tabindex="0" 
                     class="calendar__day 
-                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
-                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">1</td>
+                    calendar__day--unavailable">1</td>
                 <td tabindex="0" 
                     class="calendar__day
                      {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
@@ -198,9 +196,8 @@
 
 <div class="column-one-quarter" {{ 'hidden' if not (query.tab === 'leave') }}>
 	<div class="info-panel">
-        <p><a href="staff-holiday?personId={{person.id}}" class="mt10">Book time off</a></p>
-		<p><a href="staff-availability?personId={{person.id}}" class="mt10">Change availability</a></p>
+        <p><a href="{{person.id}}/staff-holiday" class="mt10">Book time off</a></p>
+		<p><a href="{{person.id}}/staff-availability" class="mt10">Change availability</a></p>
 	</div>
 
 </div>
-

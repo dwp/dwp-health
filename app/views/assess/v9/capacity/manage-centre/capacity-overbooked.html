@@ -107,9 +107,7 @@
 		        <ul class="time-slots time-slots-available">
 		            {% for slot in slots %}
 		            <li class="time-slot__list
-				            {% if staffTotals.available - slot.usedSlots < 0 %}
-				            	time-slot__list--overbooked
-				            {% elseif staffTotals.available - slot.usedSlots == 0 %}
+				            {% if staffTotals.available - slot.usedSlots < 1  %}
 				                time-slot__list--full
 				            {% else %}
 				                time-slot__list--available
@@ -117,12 +115,9 @@
 				            ">
 		                <h4 class="time-slot__heading">{{ slot.time }}</h4>
 		                <h4 class="time-slot__heading">
-				            {% if staffTotals.available - slot.usedSlots < 0 %}
-				            Overbooked by {{ 0 - (staffTotals.available - slot.usedSlots) }}
-				            {% elseif staffTotals.available - slot.usedSlots == 0 %}
-				            full
-				            {% else %}
-				            {{ staffTotals.available - slot.usedSlots }} slots available
+		                	{% if staffTotals.available - slot.usedSlots < 0 %}
+		                	Overbooked
+				            
 				            {% endif %}</h4>
 		                <span>{{ staffTotals.available }} total slots</span>
 		            </li>
