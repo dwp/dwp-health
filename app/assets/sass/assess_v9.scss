@@ -413,6 +413,10 @@ td,th {
 			border-left: 5px solid $green;
 		}
 
+		&--overbooked {
+			border-left: 5px solid $orange;
+		}
+
 		&--selected {
 			background: $govuk-blue;
 			color: white;

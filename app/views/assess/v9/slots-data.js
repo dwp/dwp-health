@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       "time": "11:00am",
-      "usedSlots": 12
+      "usedSlots": 9
     },
     {
       "time": "13:00pm",
@@ -36,11 +36,11 @@ module.exports = {
     },
     {
       "time": "11:00am",
-      "usedSlots":10
+      "usedSlots":11
     },
     {
       "time": "13:00pm",
-      "usedSlots": 11
+      "usedSlots": 10
     },
     {
       "time": "14:00pm",
