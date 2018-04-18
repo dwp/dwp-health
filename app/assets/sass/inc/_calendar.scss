@@ -195,7 +195,7 @@
 		color: #000;
 
 		&--today {
-			&:after {
+			&:before {
 				content: "today";
 				position: absolute;
 				bottom: 0;

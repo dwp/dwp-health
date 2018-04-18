@@ -8,6 +8,28 @@
 
  <div class="container">
  	<div class="grid-row">
+ 		<div class="grid-row">
+ 		<div class="column-two-thirds">
+	        <div class="data column-one-quarter">
+			  <span class="data-item bold-xxlarge">{{ totalAvailableAppointments }}</span>
+			  <span class="data-item bold-xsmall">Avaialble Appointments</span>
+			</div>
+			<div class="data column-one-quarter">
+			  <span class="data-item bold-xxlarge"> {{totalAppointments}} </span>
+			  <span class="data-item bold-xsmall">Booked appointments</span>
+			</div>
+			<div class="data column-one-quarter">
+			  <span class="data-item bold-xxlarge">{{ staffTotals.available }}</span>
+			  <span class="data-item bold-xsmall">Available Staff</span>
+			</div>
+			<div class="data column-one-quarter">
+			  <span class="data-item bold-xxlarge">{{ (totalAppointments / (staffTotals.available * slots.length) * 100) | round }}%</span>
+			  <span class="data-item bold-xsmall">Used capacity</span>
+			</div>
+		</div>
+	</div>
+ 	</div>
+ 	<div class="grid-row">
  		<div class="column-half">
 	 		<table class="calendar-picker mt0">
 	        <caption>April 2018</caption>
@@ -82,25 +104,7 @@
 	    </table>
  		</div>
  		<div class="column-half">
- 			<h4 class="heading-small mt0">Monday 16 April</h4>
- 			<div class="grid-row">
-		        <div class="data column-one-quarter">
-				  <span class="data-item bold-xxlarge">{{ totalAvailableAppointments }}</span>
-				  <span class="data-item bold-xsmall">Avaialble Appointments</span>
-				</div>
-				<div class="data column-one-quarter">
-				  <span class="data-item bold-xxlarge"> {{totalAppointments}} </span>
-				  <span class="data-item bold-xsmall">Booked appointments</span>
-				</div>
-				<div class="data column-one-quarter">
-				  <span class="data-item bold-xxlarge">{{ (totalAppointments / (staffTotals.available * slots.length) * 100) | round }}%</span>
-				  <span class="data-item bold-xsmall">Used capacity</span>
-				</div>
-				<div class="data column-one-quarter">
-				  <span class="data-item bold-xxlarge">{{ staffTotals.available }}</span>
-				  <span class="data-item bold-xsmall">Available Staff</span>
-				</div>
-			</div>
+
 		    <div class="grey-list">
 		        
 	    		<h3 class="heading-medium mt0">Appointment slots</h3>
@@ -131,7 +135,14 @@
 		        </ul>
 		    </div>
 
-		    <h2 class="heading-medium">Today's staff</h2>
+		    
+		</div>
+
+
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+<h2 class="heading-medium">Available staff</h2>
 			<table>
 				<thead>
 					<tr>
@@ -160,13 +171,6 @@
 					{% endfor %}
 				</tbody>
 			</table>
-		</div>
-
-
-	</div>
-	<div class="grid-row">
-		<div class="column-half">
-
 		</div>
 	</div>
 </div>

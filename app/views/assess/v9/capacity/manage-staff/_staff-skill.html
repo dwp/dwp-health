@@ -57,7 +57,7 @@
             </fieldset>
         </div>
         {% if person.id %}
-        <p class="mt30"><a href="edit-staff-hours" class="button">Save and continue</a></p>
+        <p class="mt30"><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=details" class="button">Finish</a></p>
         {% else %}
         <p class="mt30"><a href="new-staff-hours" class="button">Save and continue</a></p>
         {% endif %}
