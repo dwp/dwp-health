@@ -383,6 +383,10 @@ td,th {
 
 .time-slot{
 
+	padding: 1rem;
+	background: $grey-3;
+	margin-right: 1rem;
+
 	&__heading{
 		font-weight: 700;
 	}
@@ -391,9 +395,15 @@ td,th {
 
 	&__list {
 		background: white;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		padding: 5px;
+		padding: 0;
+
+		&--link {
+			padding: 0;
+		}
+		
 
 		&--full {
 			border-left:5px solid $red;
@@ -403,13 +413,43 @@ td,th {
 			border-left: 5px solid $green;
 		}
 
+		&--overbooked {
+			border-left: 5px solid $orange;
+		}
+
+		&--selected {
+			background: $govuk-blue;
+			color: white;
+
+			a:link {
+				color: white; 
+			}
+
+			a:visited {
+				color: white;
+			}
+		}
+
 		span, h4 {
 			flex-grow: 1;
 			flex-basis: 0;
+			padding: 5px;
 		}
 
 		span:last-child {
 			text-align: right;
+		}
+	}
+
+	&__link {
+		width: 100%;
+		text-decoration: none;
+		display: flex;
+		justify-content: space-between;
+		padding: 5px;
+
+		&:hover {
+			outline: 5px solid $govuk-blue;
 		}
 	}
 }
