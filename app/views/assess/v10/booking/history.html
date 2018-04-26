@@ -25,10 +25,18 @@
     </form>
         </div>
         <div class="column-half">
-        {% for comment in comments|sort(attribute='timestamp', reverse=true) %}
-          <h3 class="heading-small">{{comment.name}}</h3>
+          {% for comment in comments|sort(attribute='timestamp', reverse=true) %}
+          <div class="comment-heading">
+            <h3  class="heading-small mt0">{{comment.name}}</h3>
+            {% if not comment.hasComment %}
+            <h4>
+              {{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
+            {% endif %}
+          </div>
           <p class="form-hint">{{comment.dateFormatted}}</p>
+          {% if comment.hasComment %}
           <p>{{comment.comment}}</p>
+          {% endif %}
           <hr>
         {% endfor %}
 

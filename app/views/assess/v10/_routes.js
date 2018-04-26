@@ -8,6 +8,7 @@ var staffData2 = require('../../../../app/views/assess/v10/staff-data-2.js')
 var slotsData = require('../../../../app/views/assess/v10/slots-data.js')
 var slotsData2 = require('../../../../app/views/assess/v10/slots-data-2.js')
 var moment = require('moment')
+var commentsData = require('../../../../app/views/assess/v10/data/comments.js');
 
 console.log(path)
 
@@ -56,22 +57,38 @@ function getCentreDetails(req, res){
 };
 
 router.get('/booking/history', function(req, res, next){
-    res.locals.comments = require('../../../../app/views/assess/v10/data/comments.js')
+    res.locals.comments = commentsData
     next()
   })
 
 router.post('/booking/history', function(req, res, next){
     var time = new Date();
-    res.locals.comments = require('../../../../app/views/assess/v10/data/comments.js')
+    res.locals.comments = commentsData
 
 
       res.locals.comments.push({
         comment: req.body.comment,
         timestamp: time.getTime(),
         dateFormatted: moment(time).format("dddd DD MMM YYYY hh:mm a"),
-        name: "Shelia Hopper"
+        name: "Shelia Hopper",
+        hasComment: true,
+        isCustomer: true
         })
       res.render("assess/v10/booking/history");
+
+  })
+
+router.post('/booking/bobby_timeline', function(req, res, next){
+    var time = new Date();
+    commentsData.push({
+        timestamp: time.getTime(),
+        dateFormatted: moment(time).format("dddd DD MMM YYYY hh:mm a"),
+        name: "Shelia Hopper",
+        hasComment: false,
+        isCustomer: req.body.caller === "customer",
+        authenticated: req.body.confirmed
+        })
+      res.render("assess/v10/booking/bobby_timeline");
 
   })
 

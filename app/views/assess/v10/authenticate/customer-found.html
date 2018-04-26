@@ -8,7 +8,7 @@
     <div class="column-full">
         <h1 class="heading-medium">Security check</h1>
             
-            <form>
+            <form action="/{{path}}/booking/bobby_timeline", method="post">
                 
             <p class="form-hint">The caller must confirm the following details first.</p>
             <dl class="govuk-check-your-answers cya-questions-short">
@@ -48,14 +48,14 @@
                         <input id="caller-appointee" type="radio" name="caller" value="appointee" >
                         <label for="caller-appointee">Appointee</label>
                     </div>
-                    <div class="multiple-choice" data-target="caller-other">
+                    <!-- <div class="multiple-choice" data-target="caller-other">
                         <input id="caller-other" type="radio" name="caller" value="other" >
                         <label for="caller-other">Other</label>
                     </div>
                     <div class="panel panel-border-narrow" id="caller-other-content">
                         <label class="form-label" for="other-caller-details">Caller details</label>
                         <input class="form-control" name="other-caller-details" type="text" id="other-caller-details">
-                    </div>
+                    </div> -->
 
                 </fieldset>
             </div>
@@ -67,16 +67,16 @@
                           </span>
                     </legend>
                     <div class="multiple-choice">
-                        <input id="confirmed-yes" type="radio" name="confirmed" value="yes" >
+                        <input id="confirmed-yes" type="radio" name="confirmed" value="true" >
                         <label for="confirmed-yes">Yes</label>
                     </div>
                     <div class="multiple-choice">
-                        <input id="confirmed-no" type="radio" name="confirmed" value="no" >
+                        <input id="confirmed-no" type="radio" name="confirmed" value="false" >
                         <label for="confirmed-no">No</label>
                     </div>
                 </fieldset>
             </div>
-            <p><a href="/{{path}}/booking/bobby_timeline" class="button">Next</a></p>
+            <p><button class="button">Next</button></p>
         </form>
     </div>
 </div>

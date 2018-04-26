@@ -993,3 +993,9 @@ a:visited {
 	background: $grey-3;
 
 }
+
+.comment-heading {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
