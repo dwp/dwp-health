@@ -15,6 +15,7 @@ var browserSync = require('browser-sync')
 var config = require('./app/config.js')
 var utils = require('./lib/utils.js')
 var packageJson = require('./package.json')
+var moment = require('moment')
 
 // Grab environment variables specified in Procfile or as Heroku config vars
 var releaseVersion = packageJson.version
@@ -234,6 +235,7 @@ if (typeof (routes) !== 'function') {
   app.use('/assess/v8/', require('./app/views/assess/v8/_routes.js'))   
   app.use('/assess/v8-1/', require('./app/views/assess/v8-1/_routes.js'))   
   app.use('/assess/v9/', require('./app/views/assess/v9/_routes.js'))   
+  app.use('/assess/v10/', require('./app/views/assess/v10/_routes.js'))   
   app.use('/', routes)
 }
 

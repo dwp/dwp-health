@@ -343,3 +343,14 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(function () {
+  $("#caller-other-content").hide();
+  $(document).on("change", "[name='caller']", function(event){
+    if(this.value == "other"){
+      $("#caller-other-content").show();
+    } else {
+      $("#caller-other-content").hide();
+
+    }
+  })
+});
