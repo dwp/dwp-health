@@ -1,6 +1,7 @@
 {% extends path+"/_layout.html" %}
 {% import path1+"/_macros_nav.html" as nav %}
 {% import path1+"/_macros_nav2.html" as nav2 %}
+{% import path1+"/_macros_nav-mendez.html" as nav_mendez %}
 {% block assess_content %}
 
 
@@ -20,7 +21,9 @@
  -->
 
   {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% block heading %}
   {% include path1+"/_staff_heading.html" %}
+  {% endblock %}
 <main id="content" role="main" class="main-content-inner">
     <div class="container">
         <div class="grid-row main-row">

@@ -56,6 +56,12 @@ function getCentreDetails(req, res){
   }
 };
 
+
+router.get('/booked_appointments', function(req, res, next){
+    res.locals.appointments = require('../../../../app/views/assess/v10/data/appointments.js')
+    next()
+  })
+
 router.get('/booking/history', function(req, res, next){
     res.locals.comments = commentsData
     next()
@@ -77,6 +83,16 @@ router.post('/booking/history', function(req, res, next){
       res.render("assess/v10/booking/history");
 
   })
+router.post('/booking/cancel-appointment', function(req, res, next){
+    if(req.body.change_now === "true"){
+      res.redirect('timepicker')
+    } else {
+      res.redirect('/assess/v10/appointments-changed?reason=' + req.body.reason)
+    }
+
+  })
+
+
 
 router.post('/booking/bobby_timeline', function(req, res, next){
     var time = new Date();
