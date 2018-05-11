@@ -1,156 +1,125 @@
-{% extends path1+"/_layout.html" %}
+{% extends path1+"/_layout_full.html" %}
+
+
 
 {% block citizen_content %}
 
 <div class="container">
+    <div class="grid-row mt30">
+        <div class="column-half">
+            <h3 class="heading-medium mt0">Choose a date</h3>
+            <table class="calendar-picker mt0">
+                <caption>April 2018</caption>
+                <thead>
+                    <tr>
+                        <th>MON</th>
+                        <th>TUE</th>
+                        <th>WED</th>
+                        <th>THU</th>
+                        <th>FRI</th>
+                        <th>SAT</th>
+                        <th>SUN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="calendar-picker__day calendar-picker__day--closed">26</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">27</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">30</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">31</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">1</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-picker__day calendar-picker__day--closed">2</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">3</td>
+                        <td class="calendar-picker__day calendar-picker__day--today calendar-picker__day--full">4 <span class="visually-hidden">Today</span></td>
+                        <td class="calendar-picker__day calendar-picker__day--full">5</td>
+                        <td class="calendar-picker__day calendar-picker__day--full">6</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">7</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">8</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-picker__day calendar-picker__day--full">9</td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '10 April' }}"><a class="calendar-picker__link" href="?day=tuesday&date=10 April">10</a></td>
+                        <td class="calendar-picker__day calendar-picker__day--full">11</td>
+                        <td class="calendar-picker__day calendar-picker__day--full">12</td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '13 April' }}"><a class="calendar-picker__link" href="?day=friday&date=13 April">13</a></td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">14</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">15</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '16 April' }}"><a class="calendar-picker__link" href="?day=monday&date=16 April">16</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '17 April' }}"><a class="calendar-picker__link" href="?day=tuesday&date=17 April">17</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '18 April' }}"><a class="calendar-picker__link" href="?day=wednesday&date=18 April">18</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '19 April' }}"><a class="calendar-picker__link" href="?day=thursday&date=19 April">19</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '20 April' }}"><a class="calendar-picker__link" href="?day=friday&date=20 April">20</a></td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">21</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">22</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '23 April' }}"><a class="calendar-picker__link" href="?day=monday&date=23 April">23</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '24 April' }}"><a class="calendar-picker__link" href="?day=monday&date=24 April">24</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '25 April' }}"><a class="calendar-picker__link" href="?day=monday&date=25 April">25</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '26 April' }}"><a class="calendar-picker__link" href="?day=monday&date=26 April">26</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '27 April' }}"><a class="calendar-picker__link" href="?day=monday&date=27 April">27</a></td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '30 April' }}"><a class="calendar-picker__link" href="?day=monday&date=30 April">30</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '1 May' }}"><a class="calendar-picker__link" href="?day=monday&date=1 May">1</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '2 May' }}"><a class="calendar-picker__link" href="?day=monday&date=2 May">2</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '3 May' }}"><a class="calendar-picker__link" href="?day=monday&date=3 May">3</a></td>
+                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '4 May' }}"><a class="calendar-picker__link" href="?day=monday&date=4 May">4</a></td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">5</td>
+                        <td class="calendar-picker__day calendar-picker__day--closed">6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column-half">
+            <h3 class="heading-medium mt0">Choose a time</h3>
+            <h4 class="heading-small mt0"><span class="capitalise">{{query.day}}</span> {{query.date}}</h4>
+            <ul class="time-slot time-slots-available">
+                {% for slot in slots %}
+                <li class="time-slot__list time-slot__list--link
+                    {{ 'time-slot__list--selected' if query.time == slot.time }}
+                            {% if staffTotals.available - slot.usedSlots < 1  %}
+                                hidden
+                            {% endif %}
+                            ">
+                    <a href="?day={{query.day}}&date={{query.date}}&time={{slot.time}}" class="time-slot__link">
+                        <h4 class="time-slot__heading">{{ slot.time }}</h4>
+                        <h4 class="time-slot__heading">
+                            {% if staffTotals.available - slot.usedSlots < 1 %}
+                            full
+                            {% else %}
+                            {{ staffTotals.available - slot.usedSlots }} slots available
+                            {% endif %}</h4>
+                    </a>
+                </li>
+                {% endfor %}
+                </li>
+            </ul>
+            {% if query.time %}
+                <h3 class="heading-medium">Selected appointment</h3>
+                <p><span class="capitalise">{{query.day}}</span> {{query.date}} at {{query.time}}</p>
+                {% if query.date == '10 April' and query.time == '11:00am' %}
+                <p>This is the next available appointment.</p>
+                {% endif %}
+                <p><a href="bobby_timeline_rebooked?day={{query.day}}&time={{query.time}}&date={{query.date}}" class="button">Confirm</a></p>
 
-  {# macro #}
-  {{ nav.case_tabs("booking",1,path1) }}
+            {% endif %}
 
-  <div class="grid-row mt30">
+            <p class="mt40"><a href="bobby_timeline">Cancel</a></p>
 
-    <div class="column-third">
-    
-
-		<div class="info-panel">
-		          <h3 class="heading-small">Assessment centre</h3>
-		          <p><span class="info-display">Tresco house</span></p>
-			  </div>
-
-			  <div class="info-panel">
-	          	<h3 class="heading-small">Skill required</h3>
-			  	<p><span class="info-display">Complex neuro</span></p>
-			  </div>
-	
-	    
-			  <div class="info-panel">
-		          <h3 class="heading-small">Requirements</h3>
-			          <ul class="filter-list">
-				          <li><span>Wednesday</span></li>
-				          <li><span>Thursday</span></li>
-						  <li><span>Afternoon</span></li>
-						  <li><span>Ground floor access</span></li>
-			          </ul>
-			          
-			          <p><a href="booking">Edit</a></p>
-			  </div>
-
-
-    </div><!-- column -->
-    
-    
-    
-
-    
-    
-    
-    <div class="column-third">
-    	<h3 class="heading-medium mt0">Choose a date</h3>
-    	
-    	<div class="calendar-book">
-    	<table>
-    	<caption>January 2018</caption>
-    	<thead>
-    		<tr>
-    			<th>MON</th>
-    			<th>TUE</th>
-    			<th>WED</th>
-    			<th>THU</th>
-    			<th>FRI</th>
-    			<th>SAT</th>
-    			<th>SUN</th>
-    		</tr>
-    	</thead>
-    	<tbody>
-    		<tr>
-    			<td>1</td>
-    			<td>2</td>
-    			<td>3</td>
-    			<td class="available"><a href="timepicker" class="selected">4</a></td>
-    			<td>5</td>
-    			<td>6</td>
-    			<td>7</td>
-    		</tr>
-    		<tr>
-    			<td>8</td>
-    			<td>9</td>
-    			<td class="available"><a href="timepicker">10</a></td>
-    			<td>11</td>
-    			<td>12</td>
-    			<td>13</td>
-    			<td>14</td>
-    		</tr>
-    		<tr>
-    			<td>15</td>
-    			<td>16</td>
-    			<td class="available"><a href="timepicker">17</a></td>
-    			<td class="available"><a href="timepicker">18</a></td>
-    			<td>19</td>
-    			<td>20</td>
-    			<td>21</td>
-    		</tr>
-    		<tr>
-    			<td>22</td>
-    			<td>23</td>
-    			<td>24</td>
-    			<td>25</td>
-    			<td>26</td>
-    			<td>27</td>
-    			<td>28</td>
-    		</tr>
-    		<tr>
-    			<td>29</td>
-    			<td>30</td>
-    			<td class="available"><a href="timepicker">31</a></td>
-    			<td>1</td>
-    			<td>2</td>
-    			<td>3</td>
-    			<td>4</td>
-    		</tr>
-    	</tbody>
-    	</table>
-    	
-    	
-    	<ul class="key">
-    		<li><span class="available">Available date</span>Available</li>
-    		<li><span>Unavailable date</span>Unavailable</li>
-    	</ul>
-    	
-    	<p class="mt40"><a href="booking">Cancel</a></p>
-    	
-    	
-    	</div>	
-    	
-    	
+        </div>
     </div>
-    
-    
-    
-   <div class="column-third">
-   <h3 class="heading-medium mt0">Choose a time</h3>
-    
-    
-   <div class="time-select clearfix">
-   	<h4 class="heading-small">Thursday 4th January</h4>
-   	<ul>
-   		<li><a href="timepicker2">2pm<span>1 hour</span></a></li>
-   		<li><a href="#">3pm<span>1 hour</span></a></li>
-   		<li><a href="#">5pm<span>1 hour</span></a></li>
-   	</ul>
-   </div>
-   
-
-    
-    
-    </div>
-    
-    
-    
-    
-   
-  </div><!-- row -->
-</div><!-- container -->
-
+    <!-- row -->
+</div>
+<!-- container -->
 {% endblock %}
 
 {% block footer_top %}
