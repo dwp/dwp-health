@@ -5,6 +5,7 @@
 {% block citizen_content %}
 
 <div class="container">
+    
     <div class="grid-row mt30">
         <div class="column-half">
             <h3 class="heading-medium mt0">Choose a date</h3>
@@ -103,6 +104,16 @@
                 {% endfor %}
                 </li>
             </ul>
+            <div class="notice mt30 mb30">
+        <i class="icon icon-important">
+          <span class="visually-hidden">Warning</span>
+        </i>
+        <p><strong class="bold-small">
+          The appointment has been re-arranged by the customer.
+        </strong> </p>
+    </div>
+
+    <p><a href="bobby">View appointment history</a></p>
             {% if query.time %}
                 <h3 class="heading-medium">Selected appointment</h3>
                 <p><span class="capitalise">{{query.day}}</span> {{query.date}} at {{query.time}}</p>
