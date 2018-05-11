@@ -16,32 +16,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": true
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -63,32 +63,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -110,32 +110,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": false,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": true
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -157,32 +157,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -204,32 +204,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": false,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": true
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -251,32 +251,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -298,32 +298,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": true
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -345,32 +345,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": true
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -392,32 +392,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": true
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": true
       }
     }
@@ -439,32 +439,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -486,32 +486,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": true
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }
@@ -533,32 +533,32 @@ module.exports = [
     "days": {
       "monday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "tuesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "wednesday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "thursday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       },
       "friday": {
         "available": true,
-        "start": "09:00",
-        "end": "17:00",
+        "start": "9:00am",
+        "end": "5:00pm",
         "scrutiny": false
       }
     }

@@ -991,3 +991,12 @@ a:visited {
 	background: $grey-3;
 
 }
+
+.time-list {
+	display: flex;
+	justify-content: start;
+
+	&__day{
+		flex: 0 0 120px;
+	}
+}
