@@ -1,8 +1,8 @@
 {% extends path1+"/_layout.html" %}
 
 {% block left_content %}
- <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Awaiting further medical evidence</p>
-<h4 class="heading-small">On hold since {{ 'D MMMM YYYY' | randDaysAgo(0)}}</h4>
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Ready for review</p>
+<h4 class="heading-small">Medical evidence received on {{ 'D MMMM YYYY' | randDaysAgo(0)}}</h4>
  <p>{% if query.reason == "home-visit" %}
             Customer requested home visit
             {% elseif query.reason == "condition" %}
@@ -16,7 +16,6 @@
             {% endif %}</p>
 
 
-<p><a href="scrutiny-3?reason={{query.reason}}" class="button">Log evidence received</a></p>
  <hr>
 {% endblock %}
 {% block left_nav_links %}{% endblock %}
@@ -28,6 +27,14 @@
 <div class="container">
 
 <div class="timeline">
+
+        <span class="line"></span>
+        <div class="timeline__event">
+            <h3 class="timeline__heading">Medical evidence received</h3>
+
+          <p class="timeline_datetime">{{ 'D MMMM YYYY' | randDaysAgo(0)}}</p>
+        </div>
+
         <span class="line"></span>
         <div class="timeline__event">
             <h3 class="timeline__heading">Referred back to scrutiny (Appointment cancelled)</h3>
@@ -44,7 +51,7 @@
             Customer has requested a taxi to their appointment
             {% endif %}
         </p>
-          <p class="timeline_datetime">{{ 'D MMMM YYYY' | randDaysAgo(0)}}</p>
+          <p class="timeline_datetime">{{ 'D MMMM YYYY' | randDaysAgo(10)}}</p>
         </div>
 
         <span class="line"></span>
