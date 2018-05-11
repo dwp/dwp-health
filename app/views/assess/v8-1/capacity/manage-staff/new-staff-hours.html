@@ -1,11 +1,13 @@
-{% extends path1+"/_addlayout.html" %} 
-
+{% extends path1+"/_manage-centre-layout.html" %} 
+{% block manage_centre_nav %}
+{% endblock %}
 
 
 {% block citizen_content %}
 <div class="container">
-    <p><a href="/{{path2}}" class="link-back">Back</a></p>
-    <h3 class="heading-medium mt0">Add a new Healthcare Professional</h3>
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff" class="link-back">Back</a></p>
+    
+    <h1 class="heading-medium mt0">Add a new Healthcare Professional</h1>
    
     {% include path1+ "/manage-staff/_staff-hours.html" %}
     <!-- row -->

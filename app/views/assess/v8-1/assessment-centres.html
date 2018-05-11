@@ -45,19 +45,18 @@
 
                 <thead>
                   <tr class="header-view">
-                    <th style="padding-left:15px;">Name</th>
+                    <th>Name</th>
                     <th>Location</th>
                   </tr>
                 </thead>
-
+                <tbody>
                 {% for centreKey, centre in centres %}
                 <tr>
-                  <td style="padding-left:15px;"><a href="capacity/manage-centre/{{centreKey}}/details">{{centre.name}}</a></td>
+                  <td><a href="capacity/manage-centre/{{centreKey}}/details">{{centre.name}}</a></td>
                   <td>{{centre.location}}</td>
                 </tr>
                 {% endfor %}
-
-                               
+                </tbody>           
               </table>
           </div><!-- column -->
           

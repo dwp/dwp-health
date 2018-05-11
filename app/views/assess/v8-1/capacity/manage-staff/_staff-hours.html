@@ -1,7 +1,13 @@
 <div class="container">
     <div class="grid-row mt30">
         <div class="column-two-thirds">
-            <h4 class="heading-small"></h4>
+            <form 
+            method="post"
+            {% if staff.id %}
+            action="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=hours"
+            {% else %}
+            action="/{{path2}}/{{centre.id}}/manage-staff?tab=hours"
+            {% endif %}>
             <fieldset>
 
             <legend>
@@ -13,7 +19,7 @@
                     id="available-days-{{loop.index}}" 
                     name="available-days" 
                     type="checkbox" 
-                    value="{{loop.index}}"" 
+                    value="{{loop.index}}"
                     data-toggle-content="times-for-{{dayName}}"
                     {% if day.available %} checked {% endif%} >
                 <label for="available-days-{{loop.index}}">{{ dayName }}</label>
@@ -44,21 +50,13 @@
 
 
           </fieldset>
-        <p class="mt30">
-            {% if staff.id %}
-                <a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=hours" class="button">Finish</a>
-            {% else %}
-                <a href="/{{path2}}/{{centre.id}}/manage-staff?tab=hours" class="button">Finish</a>
-        {% endif %}
-        </p>
+            <button type="submit" class="button">Finish</button>
 
         </div>
         <div class="column-one-third">
             <div class="info-panel">
                 <h3 class="heading-small">Skill</h3>
                 <p>{{person.skill}}</p>
-                <h3 class="heading-small mt0">Gender</h3>
-                <p>{{ person.gender }}</p>
                 <h3 class="heading-small mt0">Email</h3>
                 <p>{{person.email}}</p>
                 <h3 class="heading-small mt0">Phone</h3>
