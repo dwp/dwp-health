@@ -1,0 +1,82 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+ <div class="available-slot">
+      <div class="column-full" style="padding: 0;">
+          <h4 class="heading-small">Thursday, 4 January</h4>
+          <p>14:00pm</p>
+      </div>
+      
+  </div>
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+        <h3 class="heading-medium mt20">Edit appointment</h3>
+
+    <form action="bobby_timeline_rebooked">
+        <div class="panel panel-border-wide">
+ 
+            <p>
+              Other appointments may be available in the Lorem ipsum dolor sit amet. Consectetur adipisicing elit, sed do eiusmod
+              tempor incididun.
+            </p>
+        </div>
+        <fieldset class="form-group">
+            <legend class="form-label-bold">Choose an appointment time</legend>
+
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-1" value="Tuesday, 9 January 2018 at 11:00am">
+                <label for="available-appointments-1">Tuesday, 9 January 2018 at 11:00am</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-2" value="Tuesday, 9 January 2018 at 2:00pm">
+                <label for="available-appointments-2">Tuesday, 9 January 2018 at 2:00pm</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-3" value="Thursday, 11 January 2018 at 11:00am">
+                <label for="available-appointments-3">Thursday, 11 January 2018 at 11:00am</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-4" value="Thursday, 11 January 2018 at 2:00pm">
+                <label for="available-appointments-4">Thursday, 11 January 2018 at 2:00pm</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-5" value="Monday, 16 January 2018 at 11:00am">
+                <label for="available-appointments-5">Monday, 16 January 2018 at 11:00am</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-6" value="Tuesday, 17 January 2018 at 11:00am">
+                <label for="available-appointments-6">Tuesday, 17 January 2018 at 11:00am</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-7" value="Tuesday, 17 January 2018 at 2:00pm">
+                <label for="available-appointments-7">Tuesday, 17 January 2018 at 2:00pm</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-8" value="Wednesday, 18 January 2018 at 2:00pm">
+                <label for="available-appointments-8">Wednesday, 18 January 2018 at 2:00pm</label>
+            </div>
+        </fieldset>
+
+        <p><a href="timepicker-more" class="button-secondary">View more appointments</a></p>
+        <input type="hidden" name="tab" value="Timeline">
+        
+        <p><button type="submit" class="button">Next</button></p>
+
+
+    </form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
