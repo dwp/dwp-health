@@ -18,10 +18,23 @@
 {% block left_content_secondary %}
 
 {% endblock %}
+
 {% block citizen_content %}
  {# macro #}
-  {{ nav2.case_tabs("bobby_timeline",1,path1) }}
+<div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+      {% set navs = [
+        {label:"Timeline"},
+        {label:"Details"}
+        ] %}
+      {% for item in navs %}
+        <li {% if query.tab == item.label %} class="active"{% endif %}><a href="?tab={{item.label}}&status={{query.status}}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 
+
+{% if query.tab == "Timeline" %}
 <div class="container">
 
 <div class="timeline">
@@ -31,6 +44,7 @@
           <h3 class="timeline__heading">{{query.status}} at 3:30pm</h3>
           <p class="timeline_datetime">04 February 2018</p>
         </div>
+
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Appointment booked</h3>
@@ -92,7 +106,66 @@
   </div><!-- row -->
 </div><!-- container -->
 
+{% endif %}
+
+
+{% if query.tab == "Details" %}
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>0151 924 2080</p>
+            <h4 class="heading-small">Text</h4>
+            <p>07979 000000</p>
+            <h4 class="heading-small">Email</h4>
+            <p>the.victor.castillo@madeup.com</p>
+            <h4 class="heading-small">Postal address</h4>
+            <p class="address-stack">
+                <span>27 Redhill Lane</span>
+                <span>Ainsdale</span>
+                <span>London</span>
+                <span>Merseyside</span>
+                <span>PR8 9UE</span>
+            </p>
+        </div>
+        <!-- column -->
+        <div class="column-third">
+            <h1 class="heading-medium mt0">Appointment details</h1>
+            <h2 class="heading-small">Assessment Centre</h2>
+            <p></p>
+            <h2 class="heading-small">Date</h2>
+            <p>25 May 2018</p>
+            <h2 class="heading-small">Time</h2>
+            <p>
+                10:00
+            </p>
+            <h2 class="heading-small">Special Requirements</h2>
+            <ul class="list-bullet">
+            </ul>
+        </div>
+        <div class="column-third">
+<h3 class="heading-medium mt0">Next available appointment</h3>
+        <div class="info-panel available-slot">
+          <p class="mt10 mb0 bold-small"><span class="circle red"></span>{{query.status if query.status else "Customer sent home unseen"}}</p>
+                <div class="column-half" style="padding: 0;">
+                    <h4 class="heading-small">Thursday 4th January</h4>
+                    <p>14:00pm</p>
+                </div>
+                <div class="column-half" style="padding: 0; text-align: right;">
+                    <a href="../booked_appointments" class="button">Book</a>
+                </div>
+            
+        </div>
+        </div>
+        <!-- column -->
+
+    <!-- row -->
+</div>
+
+{% endif %}
 {% endblock %}
+
 
 {% block footer_top %}
 {{ super() }}

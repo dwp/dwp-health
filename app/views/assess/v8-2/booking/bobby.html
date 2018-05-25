@@ -25,96 +25,72 @@
   {{ nav2.case_tabs("bobby",1,path1) }}
 
 <div class="container">
-
-
-  <div class="grid-row mt30">
-  
-  
-  <div class="column-third">
-  
-     
-    <h3 class="heading-medium mt0">Contact details</h3>
-    <h4 class="heading-small">Phone</h4>
-    <p>0151 924 2080</p>
-    
-    <h4 class="heading-small">Text</h4>
-    <p>07979 000000</p>
-    
-    <h4 class="heading-small">Email</h4>
-    <p>the.victor.castillo@madeup.com</p>
-    
-    <h4 class="heading-small">Postal address</h4>
-    <p class="address-stack">
-    	<span>27 Redhill Lane</span>
-    	<span>Ainsdale</span>
-    	<span>London</span>
-    	<span>Merseyside</span>
-    	<span>PR8 9UE</span>
-    </p>
-
-       
-    
-    </div><!-- column -->
-
-    <div class="column-third">
-            <h3 class="heading-medium mt0">Appointment history</h3>
-
-            <h4 class="heading-small">12th July 2016</h4>
-            <p class="appt-time">14:00</p>
-            <p><span class="status red">CSHU - 15:30</span></p>
-            <h4 class="heading-small">9th May 2015</h4>
-            <p class="appt-time">14:00</p>
-            <p><span class="status red">DNA</span></p>
-            <h4 class="heading-small">1st December 2014</h4>
-            <p class="appt-time">14:00</p>
-            <p><span class="status green">ARRIVED - 13:50</span></p>
-            <h4 class="heading-small">11th November 2014</h4>
-            <p class="appt-time">14:00</p>
-            <p><span class="status grey">Cancelled</span></p>
+    <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>0151 924 2080</p>
+            <h4 class="heading-small">Text</h4>
+            <p>07979 000000</p>
+            <h4 class="heading-small">Email</h4>
+            <p>the.victor.castillo@madeup.com</p>
+            <h4 class="heading-small">Postal address</h4>
+            <p class="address-stack">
+                <span>27 Redhill Lane</span>
+                <span>Ainsdale</span>
+                <span>London</span>
+                <span>Merseyside</span>
+                <span>PR8 9UE</span>
+            </p>
+        </div>
+        <!-- column -->
+        <div class="column-third">
+            <h1 class="heading-medium mt0">Appointment details</h1>
+            <h2 class="heading-small">Assessment Centre</h2>
+            <p></p>
+            <h2 class="heading-small">Date</h2>
+            <p>25 May 2018</p>
+            <h2 class="heading-small">Time</h2>
+            <p>
+                10:00
+            </p>
+            <h2 class="heading-small">Special Requirements</h2>
+            <ul class="list-bullet">
+            </ul>
+        </div>
+        <div class="column-third">
+            <form action="bobby-status-changed">
+                <fieldset class="form-group">
+                    <legend>
+                        <h1 class="heading-medium mt0">Change appointment status</h1>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="status-1" type="radio" name="status" value="Customer arrived">
+                        <label for="status-1">Customer arrived</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="status-2" type="radio" name="status" value="Failed to attend">
+                        <label for="status-2">Failed to attend</label>
+                    </div>
+                    <!-- <div class="multiple-choice">
+                        <input id="status-3" type="radio" name="status" value="Unable to attend">
+                        <label for="status-3">Unable to attend</label>
+                    </div> -->
+                </fieldset>
+                <input type="hidden" name="tab" value="Timeline">
+                <button class="button">Save</button>
+            </form>
+            <ul class="mt20">
+                <li><a href="timepicker">Edit appointment</a></li>
+                <li><a href="cancel-appointment">Cancel appointment</a></li>
+                <li><a href="timeline_sms">Log SMS sent</a></li>
+            </ul>
         </div>
 
-    
-    <div class="column-third">
-  
-     
-    
-    
-    
-    
-    
-    
-    
-    
-    </div><!-- column -->
-
-    
-  
-    <div class="column-third">
-
-
-    
-    
-    
-    
-    
-    </div><!-- column -->
-    
-    
-     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  </div><!-- row -->
-</div><!-- container -->
-
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
 {% endblock %}
 
 {% block footer_top %}
