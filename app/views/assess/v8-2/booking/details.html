@@ -39,8 +39,8 @@
         <h3 class="heading-medium mt0">Next available appointment</h3>
         <div class="info-panel available-slot">
                 <div class="column-half" style="padding: 0;">
-                    <h4 class="heading-small">Thursday 4th January</h4>
-                    <p>14:00pm</p>
+                    <h4 class="heading-small">{{appointments.nextAvailable.day}} {{appointments.nextAvailable.date}}</h4>
+                    <p>{{appointments.nextAvailable.time}}</p>
                 </div>
                 <div class="column-half" style="padding: 0; text-align: right;">
                     <a href="../booked_appointments" class="button">Book</a>

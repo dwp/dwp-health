@@ -49,14 +49,12 @@
             <h2 class="heading-small">Assessment Centre</h2>
             <p></p>
             <h2 class="heading-small">Date</h2>
-            <p>25 May 2018</p>
+            <p>{{appointments.nextAvailable.day}} {{appointments.nextAvailable.date}}</p>
             <h2 class="heading-small">Time</h2>
             <p>
-                10:00
+                {{appointments.nextAvailable.time}}
             </p>
-            <h2 class="heading-small">Special Requirements</h2>
-            <ul class="list-bullet">
-            </ul>
+
         </div>
         <div class="column-third">
             <form action="bobby-status-changed">
@@ -83,7 +81,7 @@
             <ul class="mt20">
                 <li><a href="timepicker">Edit appointment</a></li>
                 <li><a href="cancel-appointment">Cancel appointment</a></li>
-                <li><a href="timeline_sms">Log SMS sent</a></li>
+                <li><a href="timeline_sms?tab=Timeline">Log SMS sent</a></li>
             </ul>
         </div>
 
