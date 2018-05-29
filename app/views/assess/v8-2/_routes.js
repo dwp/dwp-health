@@ -19,6 +19,20 @@ router.get('*', function (req, res, next) {
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = req.cookies.stage || 1;
   res.locals.query = req.query;
+  res.locals.appointments = {
+    referred: "25 May 2018",
+    booked: "12 May 2018",
+    nextAvailable: {
+      date: "8 June 2018",
+      day: "Friday",
+      time: "2:00pm"
+    },
+    rearranged: {
+      date: "11 June 2018 ",
+      day: "Monday",
+      time: "11:00am"
+    },
+  }
   //res.locals.staff = staffData;
   next()
 })

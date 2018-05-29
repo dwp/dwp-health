@@ -48,55 +48,55 @@
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Appointment booked</h3>
-          <p class="timeline_datetime">04 February 2018</p>
+          <p class="timeline_datetime">{{appointments.booked}}</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Referred for appointment</h3>
-          <p class="timeline_datetime">30 January 2018</p>
+          <p class="timeline_datetime">{{appointments.referred}}</p>
         </div>
 
          <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">GP statement received (ESA113)</h3>
-          <p class="timeline_datetime">29 January 2018</p>
+          <p class="timeline_datetime">29 April 2018</p>
         </div>
         
           <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
-          <p class="timeline_datetime">19 January 2018</p>
+          <p class="timeline_datetime">19 April 2018</p>
         </div>
         
           <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
-          <p class="timeline_datetime">4 January 2018</p>
+          <p class="timeline_datetime">4 April 2018</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
-          <p class="timeline_datetime">12 December 2018</p>
+          <p class="timeline_datetime">12 March 2018</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">FIT note (MED3) received </h3>
-          <p class="timeline_datetime">19 November 2017</p>
+          <p class="timeline_datetime">5 March 2018</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
-          <p class="timeline_datetime">5 November 2017</p>
+          <p class="timeline_datetime">20 February 2018</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">ESA application completed on the phone</h3>
-          <p class="timeline_datetime">1 November 2017</p>
+          <p class="timeline_datetime">20 February 2018</p>
         </div>
 
         <div style="clear:both"></div>
@@ -132,8 +132,10 @@
         <!-- column -->
         <div class="column-third">
             <h1 class="heading-medium mt0">Appointment details</h1>
+          <p class="mt10 mb0 bold-small"><span class="circle red"></span>{{query.status if query.status else "Customer sent home unseen"}}</p>
+            
             <h2 class="heading-small">Assessment Centre</h2>
-            <p></p>
+            <p>Tresco house</p>
             <h2 class="heading-small">Date</h2>
             <p>25 May 2018</p>
             <h2 class="heading-small">Time</h2>
@@ -145,18 +147,8 @@
             </ul>
         </div>
         <div class="column-third">
-<h3 class="heading-medium mt0">Next available appointment</h3>
-        <div class="info-panel available-slot">
-          <p class="mt10 mb0 bold-small"><span class="circle red"></span>{{query.status if query.status else "Customer sent home unseen"}}</p>
-                <div class="column-half" style="padding: 0;">
-                    <h4 class="heading-small">Thursday 4th January</h4>
-                    <p>14:00pm</p>
-                </div>
-                <div class="column-half" style="padding: 0; text-align: right;">
-                    <a href="../booked_appointments" class="button">Book</a>
-                </div>
+
             
-        </div>
         </div>
         <!-- column -->
 
