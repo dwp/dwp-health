@@ -18,14 +18,13 @@
     <div class="content">
       <nav id="proposition-menu">
         <a href="/" id="proposition-name">{{ serviceName }}</a>
+        <ul id="proposition-links">
+          <li><a href="https://healthanddisability.herokuapp.com/assess/v10a/">Case list</a></li>
+          <li><a href="/{{path}}/appointments">Appointments</a></li>
+        </ul>
       </nav>
     </div>
   </div>
-  
- 
-
-  
-  
 {% endblock %}
 
 
@@ -48,7 +47,7 @@
   {{ ("path1: "+path1) | log }}
   {{ ("path2: "+path2) | log }}
 {% endblock %}
-
+health
 {% block content %}
   {# {{ horizontal_nav('',path) }} #}
   <div nunj-block="assess_content">
