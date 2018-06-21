@@ -12,6 +12,15 @@ console.log(path)
 
 var arrivedTime = "";
 
+var getAppointmentDates = function(){
+  var appointments = {}
+
+  appointments.nextAvailable = moment().add(7, 'days').hours(11).minutes(0);
+  appointments.today = moment().hours(14).minutes(0);
+
+  return appointments;
+}
+
 
 router.get('*', function (req, res, next) {
   // path is only available with the proper value within this sub-module/router.
@@ -26,6 +35,9 @@ router.get('*', function (req, res, next) {
   res.locals.query = req.query;
   res.locals.arrivedTime = arrivedTime;
   //res.locals.staff = staffData;
+  res.locals.appointments = getAppointmentDates();
+
+
   next()
 })
 
@@ -97,7 +109,7 @@ router.get('/booking/referrals/:customerId', function(req, res, next){
   var customers = require('../../../../app/views/assess/v8-4/data/referrals.js');
 
   res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
-  res.render("assess/v8-4/booking/customer-booked");
+  res.render("assess/v8-4/booking/customer-referral");
 })
 
 router.get('/booking/booked/:customerId', function(req, res, next){

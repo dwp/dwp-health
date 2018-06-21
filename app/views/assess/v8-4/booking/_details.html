@@ -1,0 +1,26 @@
+
+ {# macro #}
+
+<div class="container">
+    {# macro #} {{ nav.case_tabs("details",1,path1) }}
+    <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>{{customer.phone}}</p>
+            <h4 class="heading-small">Mobile</h4>
+            <p>{{customer.mobile}}</p>
+            <h4 class="heading-small">Email</h4>
+            <p>{{customer.email}}</p>
+            <h4 class="heading-small">Address</h4>
+            <p class="address-stack">
+                <span>{{customer.address.street}}</span>
+                <span>{{customer.address.city}}</span>
+                <span>{{customer.address.postcode}}</span>
+
+            </p>
+        </div>
+        <!-- column -->
+       
+    <!-- row -->
+</div>

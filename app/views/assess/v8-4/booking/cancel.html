@@ -7,8 +7,8 @@
 
  <div class="available-slot">
       <div class="column-full" style="padding: 0;">
-          <h4 class="heading-small">Thursday, 4 January</h4>
-          <p>14:00pm</p>
+          <h4 class="heading-small">{{appointments.nextAvailable | formatDate("dddd D MMMM YYYY")}}</h4>
+                            <p>{{appointments.nextAvailable | formatDate("hh:mma")}}</p>
       </div>
       
   </div>
