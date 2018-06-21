@@ -46,7 +46,19 @@
         <div class="header-global">
           {% block inside_header %}{% endblock %}
         </div>
-        {% block proposition_header %}{% endblock %}
+        {% block proposition_header %}
+        <div class="header-proposition">
+          <div class="content">
+            <nav id="proposition-menu">
+              <a href="/" id="proposition-name">{{ serviceName }}</a>
+              <ul id="proposition-links">
+                <li><a href="https://healthanddisability.herokuapp.com/assess/v10a/">Scrutiny</a></li>
+                <li><a href="/{{path}}/appointments">Appointments</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      {% endblock %}
       </div>
     </header>
 
