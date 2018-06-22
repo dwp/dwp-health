@@ -10,7 +10,6 @@
  
         <li class="selected"><a href="appointments">Appointments</a></li>
         <li><a href="assessment-centres">Manage my centre</a></li>
-		<li><a href="#">Daily schedule</a></li>
 
     </ul>
   </div>
@@ -50,13 +49,21 @@
                 
 
                 <tr>
-                  <td style="padding-left:15px;" class=""><a href="booking/mendez">Mendez Dalton</td>
+                  <td style="padding-left:15px;" class="">
+                    <a href="{% if query.arrived %}
+                  booking/mendez_timeline-arrived
+                  {% else %}
+                  booking/mendez
+                  {% endif %}">Mendez Dalton</td>
                   <td>Tresco House</td>
                   <td>{{appointments.today | formatDate("D MMMM YYYY")}}</td>
                   <td>{{appointments.today | formatDate("h:mma")}}</td>
+                  {% if query.arrived %}
+                  <td class="numeric"><span class="status green">Arrived - {{arrivedTime}}</span></td>
+                  {% else %}
                   <td class="numeric"><span class="status booked">Booked</span></td>
+                  {% endif %}
                 </tr>
-                
                 
 
                  
@@ -66,7 +73,7 @@
                   <td>{{customer.address.assessmentCentre}}</td>
                   <td>{{customer.appointmentDate | formatDate("D MMMM YYYY")}}</td>
                   <td>{{customer.appointmentTime}}</td>
-                  <td class="numeric">{{customer.status}}</td>
+                  <td class="numeric"><span class="status booked">Booked</span></td>
                 </tr>
                 {% endfor %}               
               </table>

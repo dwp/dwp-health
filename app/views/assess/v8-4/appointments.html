@@ -39,7 +39,7 @@
                 <thead>
                   <tr class="header-view">
                     <th style="padding-left:15px;">Name</th>
-                    <th>Assessment Centre</th>
+                    <!-- <th>Assessment Centre</th> -->
                     <th>NI Number</th>
                     <th>Benefit</th>
                     <th>HCP skill</th>
@@ -51,7 +51,7 @@
 
                 <tr>
                   <td style="padding-left:15px;" class=""><a href="booking/details">Tomas Fernandez</a></td>
-                  <td>Tesco House</td>
+                  <!-- <td>Tesco House</td> -->
                   <td>QQ 53 12 35 C</td>
                   <td>UC</td>
                   <td>Complex Neuro </td>
@@ -62,12 +62,12 @@
                 {% for customer in customers | sort(false, false, 'receivedDate') %}
                 <tr>
                   <td style="padding-left:15px;" class=""><a href="booking/referrals/{{customer._id}}">{{customer.name.fullName}}</a></td>
-                  <td>{{customer.address.assessmentCentre}}</td>
+                  <!-- <td>{{customer.address.assessmentCentre}}</td> -->
                   <td>{{customer.NINO}}</td>
                   <td>UC</td>
                   <td>Complex Neuro</td>
                   <td>{{customer.receivedDate | formatDate("D MMMM YYYY")}}</td>
-                  <td class="numeric">{{customer.status}}</td>
+                  <td class="numeric">New claim</td>
                 </tr>
                 {% endfor %}
                

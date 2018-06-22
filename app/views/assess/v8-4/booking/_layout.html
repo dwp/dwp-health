@@ -6,6 +6,7 @@
 {% block assess_content %}
 
   {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% block main_nav %}
   <div class="nav-horizontal">
   <div class="main-nav-wrapper">
     <ul class="main-nav">
@@ -17,6 +18,8 @@
     </ul>
   </div>
 </div>
+
+{% endblock %}
   {% block heading %}
   {% include path1+"/_staff_heading.html" %}
   {% endblock %}
@@ -28,13 +31,10 @@
                   {% block left_content %}
                     <h3 class="heading-medium mt20">Next available appointment</h3>
                     <div class="available-slot">
-                        <div class="column-half" style="padding: 0;">
                             <h4 class="heading-small">{{appointments.nextAvailable | formatDate("dddd D MMMM YYYY")}}</h4>
                             <p>{{appointments.nextAvailable | formatDate("hh:mma")}}</p>
-                        </div>
-                        <div class="column-half" style="padding: 0; text-align: right;">
-                            <a href="/{{path}}/booked_appointments" class="button">Book</a>
-                        </div>
+                            <a href="/{{path}}/booked_appointments" class="button">Book this appointment</a>
+                       
                     </div>
                     <hr>
                     

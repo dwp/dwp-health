@@ -1,5 +1,20 @@
 {% extends path1+"/_layout.html" %}
 
+{% block main_nav %}
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        
+        
+        <li class="selected"><a href="{{root}}/booked_appointments?arrived=true">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
 {% block heading %}
 
 
