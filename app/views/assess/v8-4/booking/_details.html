@@ -19,7 +19,17 @@
                 <span>{{customer.address.postcode}}</span>
 
             </p>
+            {% if customer.correspondenceAddress %}
+            <h4 class="heading-small">Correspondence Address</h4>
+            <p class="address-stack">
+                <span>{{customer.correspondenceAddress.street}}</span>
+                <span>{{customer.correspondenceAddress.city}}</span>
+                <span>{{customer.correspondenceAddress.postcode}}</span>
+
+            </p>
+            {%endif%}
         </div>
+
         <!-- column -->
        
     <!-- row -->

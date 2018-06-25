@@ -65,7 +65,14 @@
                   {% endif %}
                 </tr>
                 
-
+                <!-- <tr>
+                  <td style="padding-left:15px;" class=""><a href="booking/bobby">Thomas Fernandez</td>
+                  <td>Tresco House</td>
+                  <td>2 July 2018</td>
+                  <td>11:00am</td>
+                  <td class="numeric"><span class="status booked">Booked</span></td>
+                </tr> 
+ -->
                  
                 {% for customer in customers | sort(false, false, 'appointmentDate') %}
                 <tr>

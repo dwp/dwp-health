@@ -49,16 +49,16 @@
                 </thead>
 
 
-                <tr>
+                <!-- <tr>
                   <td style="padding-left:15px;" class=""><a href="booking/details">Tomas Fernandez</a></td>
-                  <!-- <td>Tesco House</td> -->
+                  <td>Tesco House</td> 
                   <td>QQ 53 12 35 C</td>
                   <td>UC</td>
                   <td>Complex Neuro </td>
                   <td>1 June 2018</td>
                   <td class="numeric">New claim</td>
                 </tr>
-
+ -->
                 {% for customer in customers | sort(false, false, 'receivedDate') %}
                 <tr>
                   <td style="padding-left:15px;" class=""><a href="booking/referrals/{{customer._id}}">{{customer.name.fullName}}</a></td>

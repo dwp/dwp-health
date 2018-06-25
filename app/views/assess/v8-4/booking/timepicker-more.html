@@ -17,14 +17,10 @@
 {% block citizen_content %}
 
 <div class="container">
-        <h3 class="heading-medium mt20">Edit appointment</h3>
+        <h3 class="heading-medium mt20">Rearrange appointment</h3>
 
     <form action="bobby_timeline_rebooked">
-        <div class="panel panel-border-wide">
-            <p>
-              Other appointments may be available in in the old booking system. Check there if there are no suitable appointments. 
-            </p>
-        </div>
+       
         <fieldset class="form-group">
             <legend class="form-label-bold">Choose an appointment time</legend>
 
@@ -64,7 +60,7 @@
             </div>
         </fieldset>
 
-        <p><a href="timepicker-more" class="button-secondary">View more appointments</a></p>
+        <p>There are no more appointments available to view</p>
         <input type="hidden" name="tab" value="Details">
         
         <p><button type="submit" class="button">Next</button></p>

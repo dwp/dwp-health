@@ -15,7 +15,7 @@ var arrivedTime = "";
 var getAppointmentDates = function(){
   var appointments = {}
 
-  appointments.nextAvailable = moment().add(7, 'days').hours(11).minutes(0);
+  appointments.nextAvailable = moment().add(15, 'days').hours(11).minutes(0);
   appointments.today = moment().hours(14).minutes(0);
 
   return appointments;
@@ -96,7 +96,11 @@ router.get('/assessment-centres', function(req, res, next){
 })
 
 router.get('/appointments', function(req, res, next){
-  res.locals.customers = require('../../../../app/views/assess/v8-4/data/referrals.js')
+  var customers = require('../../../../app/views/assess/v8-4/data/referrals.js')
+  if(req.query.booked){
+    customers = customers.filter(customer => customer._id !== "bobby");
+  }
+  res.locals.customers = customers;
   next()
 })
 
