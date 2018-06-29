@@ -374,13 +374,13 @@ module.exports = [
     "_id": "5b30ca0f1bb81851e973cc60",
     "name": {
       "first": "Livingston",
-      "last": "Thomas",
-      "fullName": "Livingston Thomas"
+      "last": "Tomas",
+      "fullName": "Livingston Tomas"
     },
     "dateOfBirth": "1989-10-14T08:19:54+00:00",
     "mobile": "07869 427 225",
     "NINO": "QQ 94 73 42 C",
-    "email": "livingston.thomas@fakemail.com",
+    "email": "livingston.Tomas@fakemail.com",
     "status": "Unable to attend",
     "phone": "0121 823 554",
     "receivedDate": "2018-06-18T11:28:44+00:00",

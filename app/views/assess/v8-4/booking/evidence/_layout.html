@@ -1,55 +1,14 @@
-{% extends path1+"/_layout.html" %}
+{% extends path+"/booking/_layout.html" %}
 
 {% block citizen_content %}
 
   <div class="container">
 
-    {{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+    {{ nav.case_tabs("evidence",1,path1, customer._id) }}{# macro #}
 
     <div class="grid-row">
-      <div class="column-third">
-        {% block app_nav %}
-          <div class="evidence__leftnav">
 
-            <a href="facetoface" class="evidence__item mb10">
-              <h3 class="heading-small mt10 mb5">Medical assessment</h3>
-              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(4) }}</p>
-            </a>
-
-            <a href="com_psych_report" class="evidence__item mb10">
-              <h3 class="heading-small mt10 mb5">Community Psychiatric Nurse Report</h3>
-              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(7) }}</p>
-            </a>
-
-            <a href="gp_report" class="evidence__item mb10">
-              <h3 class="heading-small mt10 mb5">GP report (ESA113)</h3>
-              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(12) }}</p>
-            </a>
-
-            <a href="medical_record_data" class="evidence__item mb10">
-              <h3 class="heading-small mt10 mb5">Medical record data</h3>
-              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(15) }}</p>
-            </a>
-
-            <a href="statements" class="evidence__item mb10">
-              <h3 class="heading-small mt10 mb5">Citizen's statements (ESA50)</h3>
-              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(20) }}</p>
-            </a>
-
-            <a href="conditions" class="evidence__item mb10">
-              <h3 class="heading-small mt10 mb5">Illness, disabilities and medication</h3>
-              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(20) }}</p>
-            </a>
-
-            <div class="form-group">
-              <hr />
-              <button class="button">Add evidence</button>
-            </div>
-
-          </div>
-        {% endblock %}
-      </div><!-- column -->
-      <div class="column-two-thirds">
+      <div class="column-full">
           {% block case_content %}{% endblock %}
       </div><!-- column-full -->
     </div><!-- grid-row -->
@@ -58,7 +17,7 @@
 
 {% block body_end %}
   <div id="descriptor_choice" style="display:none; max-height:76%">
-    {% include path2+"/_addremove.html" %}
+    {% extends path+"/booking/evidence/_addremove.html" %}
   </div>
   {{ super() }}
 {% endblock %}
@@ -85,7 +44,13 @@
     };
     $.fancybox.defaults.afterClose = function(){
         $("html").css({'overflow-y':'visible'});
+        $('.des_trigger').blur();
     };
+    // highlight the approrpaiet left nav
+    $('.evidence__leftnav a h3').each(function(i,e)
+    {
+      if ($(e).text() == $('h2.heading-large').text()) $(e).parent().addClass('active');
+    })
   });
 </script>
 {% endblock %}

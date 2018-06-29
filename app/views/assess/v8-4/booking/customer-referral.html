@@ -8,11 +8,24 @@
 
 {% block citizen_content %}
 
-{% include path1+"/_details.html" %}
+{% include path1+"/details/contact.html" %}
 
 {% endblock %}
 
 {% block footer_top %}
 {{ super() }}
 {# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(1)")
+      .addClass('active_detail')
+  });
+</script>
 {% endblock %}

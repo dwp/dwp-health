@@ -61,7 +61,7 @@
  -->
                 {% for customer in customers | sort(false, false, 'receivedDate') %}
                 <tr>
-                  <td style="padding-left:15px;" class=""><a href="booking/referrals/{{customer._id}}">{{customer.name.fullName}}</a></td>
+                  <td style="padding-left:15px;" class=""><a href="booking/referrals/{{customer._id}}/details">{{customer.name.fullName}}</a></td>
                   <!-- <td>{{customer.address.assessmentCentre}}</td> -->
                   <td>{{customer.NINO}}</td>
                   <td>UC</td>

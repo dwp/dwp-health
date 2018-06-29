@@ -109,20 +109,47 @@ router.get('/booked_appointments', function(req, res, next){
   next()
 })
 
-router.get('/booking/referrals/:customerId', function(req, res, next){
+router.get('/booking/referrals/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/assess/v8-4/data/referrals.js');
 
   res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+  next()
+})
+
+router.get('/booking/referrals/:customerId', function(req, res, next){
   res.render("assess/v8-4/booking/customer-referral");
 })
 
-router.get('/booking/booked/:customerId', function(req, res, next){
+router.get('/booking/booked/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/assess/v8-4/data/booked.js');
 
   res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+  next()
+})
+
+router.get('/booking/booked/:customerId', function(req, res, next){
   res.render("assess/v8-4/booking/customer-booked");
 })
 
+router.get('/booking/referrals/:customerId/illness', function(req, res, next){
+  res.render("assess/v8-4/booking/details/illness");
+})
+
+router.get('/booking/referrals/:customerId/gp', function(req, res, next){
+  res.render("assess/v8-4/booking/details/gp");
+})
+
+router.get('/booking/referrals/:customerId/details', function(req, res, next){
+  res.render("assess/v8-4/booking/details/contact");
+})
+
+router.get('/booking/referrals/:customerId/timeline', function(req, res, next){
+  res.render("assess/v8-4/booking/timeline");
+})
+
+router.get('/booking/referrals/:customerId/evidence', function(req, res, next){
+  res.render("assess/v8-4/booking/evidence/index");
+})
 
 router.get('/capacity/manage-centre/:centreId*', function(req, res, next){
   getCentreDetails(req, res)
