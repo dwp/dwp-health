@@ -76,7 +76,7 @@
                  
                 {% for customer in customers | sort(false, false, 'appointmentDate') %}
                 <tr>
-                  <td style="padding-left:15px;" class=""><a href="booking/booked/{{customer._id}}">{{customer.name.fullName}}</a></td>
+                  <td style="padding-left:15px;" class=""><a href="booking/booked/{{customer._id}}/details">{{customer.name.fullName}}</a></td>
                   <td>{{customer.address.assessmentCentre}}</td>
                   <td>{{customer.appointmentDate | formatDate("D MMMM YYYY")}}</td>
                   <td>{{customer.appointmentTime}}</td>

@@ -31,7 +31,7 @@
                     <h3 class="heading-medium mt20">Next available appointment</h3>
                             <h4 class="heading-small">{{appointments.nextAvailable | formatDate("dddd D MMMM YYYY")}}</h4>
                             <p>{{appointments.nextAvailable | formatDate("hh:mma")}}</p>
-                            <a href="/{{path}}/appointments?booked=true" class="button">Book this appointment</a>
+                            <a href="/{{path}}/appointments?booked={{customer._id}}" class="button">Book this appointment</a>
                        
                     <hr>
                     

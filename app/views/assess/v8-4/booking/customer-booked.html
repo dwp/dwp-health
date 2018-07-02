@@ -1,9 +1,9 @@
-{% extends path+"/booking/details/_layout.html" %}
+
+{% extends path1+"/_layout.html" %}
 
 {% block heading %}
 {% include path1+"/_heading.html" %}
 {% endblock %}
-
 
 
 {% block left_content %}
@@ -12,20 +12,32 @@
           <h4 class="heading-small">{{customer.appointmentDate | formatDate("dddd D MMMM YYYY")}}</h4>
           <p>{{customer.appointmentTime}}</p>
 
-          <a href="/{{path1}}/timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Rearrange appointment</a>
+          <a href="/{{path1}}/{{customer._id}}/timepicker" class="button">Rearrange appointment</a>
 <hr>
 
 <ul>
 </ul>
 {% endblock %}
-
 {% block citizen_content %}
 
-{% include path1+"/_details.html" %}
+{% include path1+"/details/contact.html" %}
 
 {% endblock %}
 
 {% block footer_top %}
 {{ super() }}
 {# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(1)")
+      .addClass('active_detail')
+  });
+</script>
 {% endblock %}

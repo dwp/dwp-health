@@ -98,7 +98,7 @@ router.get('/assessment-centres', function(req, res, next){
 router.get('/appointments', function(req, res, next){
   var customers = require('../../../../app/views/assess/v8-4/data/referrals.js')
   if(req.query.booked){
-    customers = customers.filter(customer => customer._id !== "bobby");
+    customers = customers.filter(customer => customer._id !== req.query.booked);
   }
   res.locals.customers = customers;
   next()
@@ -112,6 +112,8 @@ router.get('/booked_appointments', function(req, res, next){
 router.get('/booking/referrals/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/assess/v8-4/data/referrals.js');
 
+  res.locals.section = "referrals";
+  res.locals.templatePath = res.locals.path+"/booking/_layout.html";
   res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
   next()
 })
@@ -122,6 +124,9 @@ router.get('/booking/referrals/:customerId', function(req, res, next){
 
 router.get('/booking/booked/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/assess/v8-4/data/booked.js');
+
+  res.locals.section = "booked";
+  res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
 
   res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
   next()
@@ -150,6 +155,42 @@ router.get('/booking/referrals/:customerId/timeline', function(req, res, next){
 router.get('/booking/referrals/:customerId/evidence', function(req, res, next){
   res.render("assess/v8-4/booking/evidence/index");
 })
+
+router.get('/booking/referrals/:customerId/evidence/:page', function(req, res, next){
+  res.render("assess/v8-4/booking/evidence/" + req.params.page);
+})
+
+
+router.get('/booking/booked/:customerId/evidence/:page', function(req, res, next){
+  res.render("assess/v8-4/booking/evidence/" + req.params.page);
+})
+
+router.get('/booking/booked/:customerId/illness', function(req, res, next){
+  res.render("assess/v8-4/booking/details/illness");
+})
+
+router.get('/booking/booked/:customerId/gp', function(req, res, next){
+  res.render("assess/v8-4/booking/details/gp");
+})
+
+router.get('/booking/booked/:customerId/details', function(req, res, next){
+  res.render("assess/v8-4/booking/details/contact");
+})
+
+router.get('/booking/booked/:customerId/timeline', function(req, res, next){
+  res.render("assess/v8-4/booking/timeline");
+})
+
+router.get('/booking/booked/:customerId/evidence', function(req, res, next){
+  res.render("assess/v8-4/booking/evidence/index");
+})
+
+
+router.get('/booking/booked/:customerId/:pageName', function(req, res, next){
+  res.render("assess/v8-4/booking/" + req.params.pageName);
+})
+
+
 
 router.get('/capacity/manage-centre/:centreId*', function(req, res, next){
   getCentreDetails(req, res)

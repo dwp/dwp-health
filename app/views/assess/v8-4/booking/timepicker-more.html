@@ -2,9 +2,9 @@
 
 {% block left_content %}
  <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+<h4 class="heading-small">{{customer.appointmentDate | formatDate("dddd D MMMM YYYY")}}</h4>
+<p>{{customer.appointmentTime}}</p>
 
-<h4 class="heading-small">Wednesday 11 July 2018</h4>
- <p>11:00am</p>
  <hr>
 {% endblock %}
 
