@@ -81,6 +81,9 @@ module.exports = function (env) {
     return Math.ceil(Math.random()*num);
   }
 
+  filters.limit = function(arr, limit) {
+    return arr.slice(0, limit);
+  }
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:

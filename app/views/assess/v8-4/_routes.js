@@ -181,6 +181,17 @@ router.get('/booking/booked/:customerId/timeline', function(req, res, next){
   res.render("assess/v8-4/booking/timeline");
 })
 
+router.get('*/timepicker', function(req, res, next){
+  var availableAppointments = require('../../../../app/views/assess/v8-4/data/availableAppointments.js');
+  
+  if(!res.locals.query.number){
+    res.locals.query.number = 4;
+  }
+  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
+  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
+  next()
+})
+
 router.get('/booking/booked/:customerId/evidence', function(req, res, next){
   res.render("assess/v8-4/booking/evidence/index");
 })
@@ -291,34 +302,7 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/:section', function(r
 
 
 
-router.get('/booking/timepicker', function(req, res, next){
-  slotsData = require('../../../../app/views/assess/v9/slots-data-booking.js')
 
-  getCentreDetails(req, res)
-  res.locals.staff = require('../../../../app/views/assess/v9/data/staff.js')
-  res.locals.staffTotals = {}
-  res.locals.query.day = req.query.day || "monday";
-  res.locals.slots = slotsData[res.locals.query.day];
-
-  res.locals.staffTotals.available = res.locals.staff.filter(function(obj){
-    if(obj.scrutinyPaperwork && obj.days[res.locals.query.day].scrutiny){
-      return false;
-    } else {
-      return obj.days[res.locals.query.day].available
-    }
-  }).length;
-
-  var totalAppointments = 0;
-
-  slotsData[res.locals.query.day].map(day => totalAppointments = totalAppointments + day.usedSlots);
-  res.locals.totalAppointments = totalAppointments;
-  res.locals.slots = slotsData[res.locals.query.day];
-  res.locals.totalSlots = slotsData[res.locals.query.day].length;
-
-  res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots;
-
-  next()
-})
 
 
 

@@ -19,25 +19,22 @@
         <fieldset class="form-group">
             <legend class="form-label-bold">Choose an appointment time</legend>
 
+            {% for appointment in availableAppointments | sort(attribute='appointmentDate') | limit(query.number) %}
             <div class="multiple-choice">
-                <input type="radio" name="appointment" id="available-appointments-3" value="Monday, 11 June 2018 at 11:00am">
-                <label for="available-appointments-3">Monday, 11 June 2018 at 11:00am</label>
+                <input type="radio" name="appointment" id="available-appointments-{{loop.index}}" value="{{appointment.appointmentDate}}">
+                <label for="available-appointments-{{loop.index}}">{{appointment.appointmentDate | formatDate("dddd D MMMM YYYY h:mma")}}</label>
             </div>
-            <div class="multiple-choice">
-                <input type="radio" name="appointment" id="available-appointments-4" value="Monday, 11 June 2018 at 2:00pm">
-                <label for="available-appointments-4">Monday, 11 June 2018 at 2:00pm</label>
-            </div>
-            <div class="multiple-choice">
-                <input type="radio" name="appointment" id="available-appointments-1" value="Tuesday, 12 June 2018 at 11:00am">
-                <label for="available-appointments-1">Tuesday, 12 June 2018 at 11:00am</label>
-            </div>
-            <div class="multiple-choice">
-                <input type="radio" name="appointment" id="available-appointments-2" value="Tuesday, 12 June 2018 at 2:00pm">
-                <label for="available-appointments-2">Tuesday, 12 June 2018 at 2:00pm</label>
-            </div>
+
+            {% endfor %}
+           
         </fieldset>
 
-        <p><a href="timepicker-more" class="button-secondary">View more appointments</a></p>
+        {% if newNumber < availableAppointments.length %}
+        <p><a href="timepicker?number={{newNumber}}" class="button-secondary">View more appointments</a></p>
+        {% else %}
+        <p>There are no more appointments available to view</p>
+        
+        {% endif %}
         
         <p><button type="submit" class="button">Next</button></p>
 
