@@ -58,13 +58,12 @@ router.post('*', function (req, res, next) {
 })
 
 
-router.post('/booking/mendez_timeline-arrived', function(req, res, next){
 
-    arrivedTime = moment(new Date()).format("h:mm a");
-    res.locals.arrivedTime = arrivedTime;
-    res.render("assess/v8-4/booking/mendez_timeline-arrived");
-  })
 
+
+router.get('/booking/mendez*', function(req, res, next){
+
+})
 router.post('/booking/cancel-appointment', function(req, res, next){
   
     if(req.body.change_now === "true"){
@@ -132,6 +131,16 @@ router.get('/booking/booked/:customerId*', function(req, res, next){
   next()
 })
 
+router.post('/booking/booked/:customerId*', function(req, res, next){
+  var customers = require('../../../../app/views/assess/v8-4/data/booked.js');
+
+  res.locals.section = "booked";
+  res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
+
+  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+  next()
+})
+
 router.get('/booking/booked/:customerId', function(req, res, next){
   res.render("assess/v8-4/booking/customer-booked");
 })
@@ -180,6 +189,13 @@ router.get('/booking/booked/:customerId/details', function(req, res, next){
 router.get('/booking/booked/:customerId/timeline', function(req, res, next){
   res.render("assess/v8-4/booking/timeline");
 })
+
+router.post('/booking/booked/mendez/mendez_timeline-arrived', function(req, res, next){
+
+    arrivedTime = moment(new Date()).format("h:mm a");
+    res.locals.arrivedTime = arrivedTime;
+    res.render("assess/v8-4/booking/mendez_timeline-arrived");
+  })
 
 router.get('*/timepicker', function(req, res, next){
   var availableAppointments = require('../../../../app/views/assess/v8-4/data/availableAppointments.js');
