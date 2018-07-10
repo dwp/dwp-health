@@ -1,0 +1,98 @@
+{% extends path1+"/_layout-booking.html" %}
+
+{% block main_nav %}
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        
+        
+        <li class="selected"><a href="{{root}}/booked_appointments?arrived=true">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block left_content %}
+
+{% include path1+'/_arrived_left_content.html' %}{% endblock %} 
+
+
+{% block citizen_content %}
+{# macro #}
+
+
+<div class="container">
+    <!-- timeline -->
+    <h1 class="heading-medium">Customer sent home unseen</h1>
+
+    <div class="panel panel-border-wide">
+    <ul class="list-bullet">
+      <li>{{customer.name.first}} has been wating less than 30 minutes</li>
+      <li>{{customer.name.first}} arrived on time (within 5 mins of appointment time)</li>
+      <li>Longest wait time is currently over 30 mins</li>
+    </ul>
+  </div>
+    <form action="" method="post">
+        <fieldset class="form-group">
+            <legend>
+                <span class="form-label">
+            Why does {{customer.name.first}} need to be sent home?
+          </span>
+            </legend>
+            <div class="multiple-choice">
+                <input id="reason-wait" type="radio" name="reason" value="wait">
+                <label for="reason-wait">Does not want to wait over 30 mins</label>
+            </div>
+            <div class="multiple-choice" data-target="dwp-other">
+                <input id="reason-cancel" type="radio" name="reason" value="cancel">
+                <label for="reason-cancel">We have had not been able to fulfill the appointment </label>
+            </div>
+            <div class="panel js-hidden" id="dwp-other">
+              <fieldset class="form-group">
+                  <legend>Select a reason</legend>
+                  <div class="multiple-choice">
+                    <input id="reason-dwp-1" type="radio" name="dwp" value="hcp">
+                    <label for="reason-dwp-1">Health care professional not available</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="reason-dwp-2" type="radio" name="dwp" value="interpreter">
+                    <label for="reason-dwp-2">Interpreter not provided</label>
+                  </div>
+              </fieldset>
+            </div>
+            <div class="multiple-choice">
+                <input id="reason-customer" type="radio" name="reason" value="customer">
+                <label for="reason-customer">Other  </label>
+            </div>
+            
+        </fieldset>
+        <fieldset class="form-group inline">
+            <legend>
+                <span class="form-label">
+            Can the appointment be re-arranged now?
+          </span>
+            </legend>
+            <div class="multiple-choice">
+                <input id="change_now-yes" type="radio" name="change_now" value="true">
+                <label for="change_now-yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+                <input id="change_now-no" type="radio" name="change_now" value="false">
+                <label for="change_now-no">No</label>
+            </div>
+        </fieldset>
+        <button class="button">Save</button>
+    </form>
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

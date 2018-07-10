@@ -241,6 +241,7 @@ if (typeof (routes) !== 'function') {
   app.use('/assess/v9/', require('./app/views/assess/v9/_routes.js'))   
   app.use('/assess/v10/', require('./app/views/assess/v10/_routes.js'))   
   app.use('/assess/v11/', require('./app/views/assess/v11/_routes.js'))   
+  app.use('/assess/v12/', require('./app/views/assess/v12/_routes.js'))   
   app.use('/', routes)
 }
 

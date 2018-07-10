@@ -1,0 +1,17 @@
+<div class="status-circle">
+<i class="status-circle__circle circle {{ 'green' if waitTime < 30 }}{{ 'red' if waitTime > 29 }}"></i> <p><span class="bold-small">
+{% if waitTime > 0 %}
+Waiting {{waitTime}} minutes</span> <br>Arrived at {{arrivedTime}}
+{% else %}
+Just arrived
+{% endif %}
+</p>
+</div>
+<p>Appointment today at 2:00pm</p>
+
+<p><a href="send-home" class="button" title="">Send home unseen</a></p>
+<hr>
+
+<ul>
+  <li><a href="timepicker?day=tuesday&date=10%20April&time=11:00am">Rearrange appointment</a></li>
+</ul>
