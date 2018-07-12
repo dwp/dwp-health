@@ -27,18 +27,18 @@ module.exports = [
     }
   },
   {
-    "_id": "mendez",
+    "_id": "inez",
     "name": {
-      "first": "Mendez",
-      "last": "Dalton",
-      "fullName": "Mendez Dalton"
+      "first": "Inez",
+      "last": "Valdez",
+      "fullName": "Inez Valdez"
     },
     "waitTime": 45,
     "arrivedTime": 2,
     "dateOfBirth": "1964-09-03T05:43:45+00:00",
     "mobile": "07907 413 364",
     "NINO": "QQ 98 69 56 C",
-    "email": "mendez.dalton@fakemail.com",
+    "email": "inez.valdez@fakemail.com",
     "status": "Unable to attend",
     "phone": "0121 809 458",
     "appointmentDate": "2018-07-10T14:44:06+00:00",
@@ -60,7 +60,7 @@ module.exports = [
       "fullName": "Angela Whitaker"
     },
     "waitTime": 10,
-    "arriveTime": -5,
+    "arrivedTime": -5,
     "dateOfBirth": "1964-08-07T06:52:25+00:00",
     "mobile": "07863 483 251",
     "NINO": "QQ 20 71 93 C",
@@ -68,7 +68,7 @@ module.exports = [
     "status": "Unable to attend",
     "phone": "0121 929 507",
     "appointmentDate": "2018-06-30T02:59:35+00:00",
-    "appointmentTime": "11:00am",
+    "appointmentTime": "2:00pm",
     "address": {
       "assessmentCentre": "Tresco House",
       "street": "755 Colonial Road",
@@ -86,7 +86,7 @@ module.exports = [
       "fullName": "Denise Woods"
     },
     "waitTime": 5,
-    "arriveTime": 15,
+    "arrivedTime": 15,
     "dateOfBirth": "1973-11-22T17:15:13+00:00",
     "mobile": "07944 475 224",
     "NINO": "QQ 23 54 55 C",
@@ -105,11 +105,11 @@ module.exports = [
     }
   },
   {
-    "_id": "5b44c636dd8890cdb943bb1b",
+    "_id": "mendez",
     "name": {
-      "first": "Inez",
-      "last": "Valdez",
-      "fullName": "Inez Valdez"
+      "first": "Mendez",
+      "last": "Dalton",
+      "fullName": "Mendez Dalton"
     },
     "dateOfBirth": "1969-12-03T20:21:03+00:00",
     "mobile": "07922 550 359",
@@ -438,30 +438,6 @@ module.exports = [
       "postcodePrefix": "B",
       "postcodeSuffix": "2 2IP",
       "postcode": "B2 2IP"
-    }
-  },
-  {
-    "_id": "5b44c63614cae5c2fee51ec7",
-    "name": {
-      "first": "Dixon",
-      "last": "Wooten",
-      "fullName": "Dixon Wooten"
-    },
-    "dateOfBirth": "1986-12-18T00:23:26+00:00",
-    "mobile": "07996 516 303",
-    "NINO": "QQ 31 95 46 C",
-    "email": "dixon.wooten@fakemail.com",
-    "status": "New claim",
-    "phone": "0121 833 466",
-    "appointmentDate": "2018-07-03T16:48:24+00:00",
-    "appointmentTime": "11:00am",
-    "address": {
-      "assessmentCentre": "Fiveways",
-      "street": "146 Euclid Avenue",
-      "city": "Birmingham",
-      "postcodePrefix": "B",
-      "postcodeSuffix": "20 9SU",
-      "postcode": "B20 9SU"
     }
   },
   {

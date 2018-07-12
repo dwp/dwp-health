@@ -18,7 +18,23 @@
 
 {% block left_content %}
 
-{% include path1+'/_arrived_left_content.html' %}{% endblock %} 
+<div class="status-circle">
+<i class="status-circle__circle circle {{ 'green' if customer.waitTime < 30 }}{{ 'red' if customer.waitTime > 29 }}"></i> <p><span class="bold-small">
+{% if customer.waitTime > 0 %}
+Waiting {{customer.waitTime}} minutes</span> <br>Arrived at {{customer.timeArrived}}
+{% else %}
+Just arrived
+{% endif %}
+</p>
+</div>
+<p>Appointment today at {{customer.appointmentTime}}</p>
+
+<hr>
+
+<ul>
+  <li><a href="timepicker?day=tuesday&date=10%20April&time=11:00am">Rearrange appointment</a></li>
+</ul>
+{% endblock %} 
 
 
 {% block citizen_content %}
@@ -31,61 +47,76 @@
 
     <div class="panel panel-border-wide">
     <ul class="list-bullet">
-      <li>{{customer.name.first}} has been wating less than 30 minutes</li>
-      <li>{{customer.name.first}} arrived on time (within 5 mins of appointment time)</li>
+      <li>{{customer.name.first}} has been waiting {{ 'less' if customer.waitTime < 30}} {{ 'more' if customer.waitTime > 29}} than 30 minutes</li>
+      <li>{{customer.name.first}} arrived {{ 'on time' if customer.arrivedTime < 10}}{{'late' if customer.arrivedTime > 10}}</li>
       <li>Longest wait time is currently over 30 mins</li>
     </ul>
   </div>
-    <form action="" method="post">
+    <form action="send-home-2" method="post">
         <fieldset class="form-group">
             <legend>
                 <span class="form-label">
             Why does {{customer.name.first}} need to be sent home?
           </span>
             </legend>
+            {% if customer.waitTime > 29 %}
+              <div class="multiple-choice">
+                <input id="reason-wait-over-30" type="radio" name="reason" value="dwp">
+                <label for="reason-wait-over-30">Does not want to any longer</label>
+              </div>
+            {% endif %}
+
+            {% if customer.waitTime < 30 %}
             <div class="multiple-choice">
-                <input id="reason-wait" type="radio" name="reason" value="wait">
+                <input id="reason-wait" type="radio" name="reason" value="dwp">
                 <label for="reason-wait">Does not want to wait over 30 mins</label>
             </div>
+            {% endif %}
+            {% if customer.arrivedTime > 10 %}
+              <div class="multiple-choice">
+                <input id="reason-late" type="radio" name="reason" value="customer">
+                <label for="reason-late">Customer arrived late</label>
+              </div>
+            {% endif %}
+
             <div class="multiple-choice" data-target="dwp-other">
-                <input id="reason-cancel" type="radio" name="reason" value="cancel">
-                <label for="reason-cancel">We have had not been able to fulfill the appointment </label>
+                <input id="reason-cancel" type="radio" name="reason" value="dwp">
+                <label for="reason-cancel">We have had not been able to carry out the appointment </label>
             </div>
             <div class="panel js-hidden" id="dwp-other">
               <fieldset class="form-group">
                   <legend>Select a reason</legend>
                   <div class="multiple-choice">
-                    <input id="reason-dwp-1" type="radio" name="dwp" value="hcp">
+                    <input id="reason-dwp-1" type="radio" name="dwp" value="dwp">
                     <label for="reason-dwp-1">Health care professional not available</label>
                   </div>
                   <div class="multiple-choice">
-                    <input id="reason-dwp-2" type="radio" name="dwp" value="interpreter">
+                    <input id="reason-dwp-2" type="radio" name="dwp" value="dwp">
                     <label for="reason-dwp-2">Interpreter not provided</label>
                   </div>
               </fieldset>
             </div>
-            <div class="multiple-choice">
+            <div class="multiple-choice" data-target="other">
                 <input id="reason-customer" type="radio" name="reason" value="customer">
                 <label for="reason-customer">Other  </label>
             </div>
+            <div class="panel js-hidden" id="other">
+              <fieldset class="form-group">
+                  <legend>Select a reason</legend>
+                  <div class="multiple-choice">
+                    <input id="reason-other-1" type="radio" name="other" value="hcp">
+                    <label for="reason-other-1">Claimant unfit to be examined</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="reason-other-2" type="radio" name="other" value="interpreter">
+                    <label for="reason-other-2">Inappropriate for health care professional to see claimant</label>
+                  </div>
+              </fieldset>
+            </div>
             
         </fieldset>
-        <fieldset class="form-group inline">
-            <legend>
-                <span class="form-label">
-            Can the appointment be re-arranged now?
-          </span>
-            </legend>
-            <div class="multiple-choice">
-                <input id="change_now-yes" type="radio" name="change_now" value="true">
-                <label for="change_now-yes">Yes</label>
-            </div>
-            <div class="multiple-choice">
-                <input id="change_now-no" type="radio" name="change_now" value="false">
-                <label for="change_now-no">No</label>
-            </div>
-        </fieldset>
-        <button class="button">Save</button>
+        
+        <button class="button">Next</button>
     </form>
 </div>
 <!-- container -->

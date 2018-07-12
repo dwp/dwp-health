@@ -105,7 +105,14 @@ router.get('/appointments', function(req, res, next){
 })
 
 router.get('/booked_appointments', function(req, res, next){
-  res.locals.customers = require('../../../../app/views/assess/v12/data/booked.js')
+  var customers = require('../../../../app/views/assess/v12/data/booked.js');
+  res.locals.customers = customers.map(customer => {
+
+    var arrivedTime = moment(customer.appointmentTime, "h:mma");
+    customer.timeArrived = arrivedTime.add(customer.arrivedTime, "minutes").format("h:mma");
+
+    return customer;
+  })
   next()
 })
 
@@ -185,7 +192,19 @@ router.get('/booking/booked/:customerId/gp', function(req, res, next){
 })
 
 router.get('/booking/booked/:customerId/arrived', function(req, res, next){
+  var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
+  res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
   res.render("assess/v12/booking/details/arrived");
+})
+router.get('/booking/booked/:customerId/send-home', function(req, res, next){
+  var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
+  res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
+  next()
+})
+
+router.post('/booking/booked/:customerId/send-home-2', function(req, res, next){
+  res.locals.postData = req.body;
+  res.render("assess/v12/booking/send-home-2");
 })
 
 router.get('/booking/booked/:customerId/details', function(req, res, next){
