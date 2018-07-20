@@ -116,6 +116,20 @@ router.get('/booked_appointments', function(req, res, next){
   next()
 })
 
+router.get('/todays_appointments', function(req, res, next){
+  var customers = require('../../../../app/views/assess/v12/data/todaysAppointments.js');
+  res.locals.customers = customers.map(customer => {
+
+    var arrivedTime = moment(customer.appointmentTime, "h:mma");
+    customer.timeArrived = arrivedTime.add(customer.arrivedTime, "minutes").format("h:mma");
+    
+    return customer;
+  })
+
+ 
+  next()
+})
+
 router.get('/booking/referrals/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/assess/v12/data/referrals.js');
 
@@ -130,7 +144,7 @@ router.get('/booking/referrals/:customerId', function(req, res, next){
 })
 
 router.get('/booking/booked/:customerId*', function(req, res, next){
-  var customers = require('../../../../app/views/assess/v12/data/booked.js');
+  var customers = require('../../../../app/views/assess/v12/data/booked.js').concat(require('../../../../app/views/assess/v12/data/todaysAppointments.js'));
 
   res.locals.section = "booked";
   res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
@@ -196,6 +210,9 @@ router.get('/booking/booked/:customerId/arrived', function(req, res, next){
   res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
   res.render("assess/v12/booking/details/arrived");
 })
+router.get('/booking/booked/:customerId/today', function(req, res, next){
+  res.render("assess/v12/booking/details/today");
+})
 router.get('/booking/booked/:customerId/send-home', function(req, res, next){
   var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
   res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
@@ -219,9 +236,20 @@ router.post('/booking/booked/mendez/mendez_timeline-arrived', function(req, res,
 
     res.locals.arrivedTimeMoment = moment(new Date());;
     arrivedTime = res.locals.arrivedTimeMoment.format("h:mm a");
-    res.locals.arrivedTime = arrivedTime
+    res.locals.arrivedTime = arrivedTime;
 
     res.render("assess/v12/booking/mendez_timeline-arrived");
+  })
+
+router.post('/booking/booked/:customerId/timeline-arrived', function(req, res, next){
+    var customers = require('../../../../app/views/assess/v12/data/booked.js');
+    res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+  
+    var arrivedTimeMoment = moment(new Date());;
+    res.locals.customer.timeArrived = arrivedTimeMoment.format("h:mm a");
+
+
+    res.render("assess/v12/booking/timeline-arrived");
   })
 
 router.get('/booking/booked/mendez/*', function(req, res, next){

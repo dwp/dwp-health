@@ -111,6 +111,7 @@ module.exports = [
       "last": "Dalton",
       "fullName": "Mendez Dalton"
     },
+    "waitTime": null,
     "dateOfBirth": "1969-12-03T20:21:03+00:00",
     "mobile": "07922 550 359",
     "NINO": "QQ 25 77 22 C",
